@@ -1,8 +1,9 @@
-import React from 'react';
-import {Route, BrowserRouter} from 'react-router-dom';
-import Home from './Pages/Home';
-import Cart from './Pages/Cart';
-import Login from './Pages/Login';
+import React from "react";
+import { Route, BrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home";
+import Cart from "./Pages/Cart";
+import Login from "./Pages/Login";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
           <h1>AP Project 1</h1>
         </header>
       </div>
-    <Route path="/" exact component={Home} />
-    <Route path="/cart" component={Cart} />
-    <Route path="/login" component={Login} />
+      <Route path="/" exact component={Home} />
+      <Route path="/cart" component={Cart} />
+      <Route path="/login" component={Login} />
+      <Route path="/profile" component={Profile} />
     </BrowserRouter>
   );
 }
