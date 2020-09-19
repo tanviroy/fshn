@@ -1,0 +1,18 @@
+This is a helper file that will help us understand the codebase of the project.
+
+CODEBASE
+/BACKEND 
+
+/FRONTEND
+/public: (Do not remove any of the default files in this directory.)
+
+/src:
+/Pages/Home.js: This is the Home Page - main page, will show all products here
+/Pages/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
+/Pages/Login.js: This is the Login Page - user can login through email ID or Google OAuth
+
+/App.js: This is the main file containing the core of the application. It holds major routes and renders components. 
+/index.css: This is the main .css file containing *all* the styling for the elements of each page. 
+/index.js: This is the starter file, containing React and the application essentially. Do NOT mess with this file!
+
+.gitignore: A plaintext file that specifies which files Git should ignore.
