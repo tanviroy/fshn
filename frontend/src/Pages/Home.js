@@ -1,5 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+// This is the Home Page - main page, will show all products here
+
+import React from 'react';
+
+//import React from "react";
+//import { Link } from "react-router-dom";
+
 
 export default function Home() {
   return (

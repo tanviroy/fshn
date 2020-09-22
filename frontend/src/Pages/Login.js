@@ -1,4 +1,10 @@
-import React from "react";
+
+// This is the Login Page - user can login through email ID or Google OAuth
+
+import React from 'react';
+
+//import React from "react";
+
 
 export default function Login() {
   return (

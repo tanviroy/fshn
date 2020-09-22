@@ -1,9 +1,20 @@
-import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
-import Home from "./Pages/Home";
-import Cart from "./Pages/Cart";
-import Login from "./Pages/Login";
-import Profile from "./Pages/Profile";
+
+// This is the main file containing the core of the application. 
+// It holds major routes and renders components.
+
+import React from 'react';
+import {Route, BrowserRouter} from 'react-router-dom';
+import Home from './Pages/Home';
+import Cart from './Pages/Cart';
+import Login from './Pages/Login';
+
+//import React from "react";
+//import { Route, BrowserRouter } from "react-router-dom";
+//import Home from "./Pages/Home";
+//import Cart from "./Pages/Cart";
+//import Login from "./Pages/Login";
+//import Profile from "./Pages/Profile";
+
 
 function App() {
   return (
