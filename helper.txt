@@ -9,7 +9,10 @@ HOW TO RUN THE APP
 CODEBASE
 /BACKEND 
 /data.js: This is the master file of all product data. Products are stored as objects. Products are currently being served from this file but will shift to a database later.
-/server.js: This is the entry point for the backend (aka the index.js file). All backend dependencies are connected here. Mongoose has to be connected and RESTful routes defined.
+/server.js: This is the entry point for the backend (aka the index.js file). All backend dependencies are connected here. Mongoose is connected, RESTful routes to be defined.
+/passportConfig.js: This is where authentication strategies for passport js are confugured. Currently, only supports local authentication, O-Auth to be added.
+/user.js: This is a Mongoose schema for a user. Currently only has username and password
+
 
 /FRONTEND
 /public: (Do not remove any of the default files in this directory.)
@@ -17,8 +20,9 @@ CODEBASE
 /src:
 /Pages/Home.js: This is the Home Page - main page, will show all products here
 /Pages/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
-/Pages/Login.js: This is the Login Page - user can login through email ID or Google OAuth
+/Pages/Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
 /App.js: This is the main file containing the core of the application. It holds major routes and renders components. 
+/App.css: This is the main CSS file. Linked to App.js
 /index.css: This is the main .css file containing *all* the styling for the elements of each page. 
 /index.js: This is the starter file, containing React and the application essentially. Do NOT mess with this file!
 
