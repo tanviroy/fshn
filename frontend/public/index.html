@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce-site</title>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -39,5 +41,110 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div class="grid-container">
+      <header class="header">
+        <div class="brand">
+          <button onclick="openMenu()">
+            &#9776;
+          </button>
+          <a href="index.html">Shop Name</a>
+        </div>
+        <div class="header-links">
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Sign In</a>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <h3>Menu</h3>
+        <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+        <ul>  
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="content">
+          <ul class="products">
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d1.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Peacock Ruffle</a>
+                </div>
+                <div class="product-brand">Grace Kelly</div>
+                <div class="product-price">$1500</div>
+                <div class="product-rating">5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d2.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Trousseau Dress</a>
+                </div>
+                <div class="product-brand">Grace Kelly</div>
+                <div class="product-price">$900</div>
+                <div class="product-rating">4.5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d1.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Slim Shirt</a>
+                </div>
+                <div class="product-brand">Nike</div>
+                <div class="product-price">$60</div>
+                <div class="product-rating">4.5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d1.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Slim Shirt</a>
+                </div>
+                <div class="product-brand">Nike</div>
+                <div class="product-price">$60</div>
+                <div class="product-rating">4.5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d1.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Slim Shirt</a>
+                </div>
+                <div class="product-brand">Nike</div>
+                <div class="product-price">$60</div>
+                <div class="product-rating">4.5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img class="product-image" src="images/d1.jpg" alt="product" />
+                <div class="product-name">
+                  <a href="product.html">Slim Shirt</a>
+                </div>
+                <div class="product-brand">Nike</div>
+                <div class="product-price">$60</div>
+                <div class="product-rating">4.5 Stars (10 Reviews)</div>
+              </div>
+            </li>
+  
+          </ul>
+        </div>
+  
+      </main>
+      <footer class="footer">
+        Copyright 2020
+      </footer>
+    </div>
+    <script>
+      function openMenu() {
+        document.querySelector(".sidebar").classList.add("open");
+      }
+      function closeMenu() {
+        document.querySelector(".sidebar").classList.remove("open")
+      }
+    </script>
   </body>
 </html>
