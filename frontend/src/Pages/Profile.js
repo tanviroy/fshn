@@ -1,3 +1,5 @@
+// This is the Profile Page - users can see all their profile details here
+
 import React from "react";
 
 export default function Profile() {

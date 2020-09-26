@@ -1,4 +1,4 @@
-/* This is the main .css file containing *all* the styling for the elements of each page. */
+/* This is the wrapper CSS file and can override App.css. We don't need to add to this. */
 
 body {
   margin: 0;
