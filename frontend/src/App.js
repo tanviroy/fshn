@@ -2,7 +2,7 @@
 // It holds major routes and renders components.
 
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter,Link } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
@@ -10,6 +10,12 @@ import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 
 function App() {
+  const openMenu = () => {
+    document.querySelector('.sidebar').classList.add('open');
+  };
+  const closeMenu = () => {
+    document.querySelector('.sidebar').classList.remove('open');
+  };
   return (
     <BrowserRouter>
       <div>
