@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+/* This is the main CSS file that we will add to. Linked to App.js */
+
+@font-face {
+  font-family: 'fonty';
+  src: URL('font.ttf') format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  /* 16px * 62.5 = 10px = 1rem */
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font: 1.6rem;
+  font-family: Helvetica;
+  height: 100vh;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+/* Home Screen */
+.products {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font:inherit;
+  font-family: 'fonty';
+}
+
+.products li {
+  max-width: 30rem;
+  list-style-type: none;
+  padding: 0;
+  flex: 0 1 30rem;
+  margin: 1rem;
+  height: 47rem;
+  border-bottom: .1rem #c0c0c0 solid;
+}
+
+.product {
+  width: 30rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.product-name {
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-brand {
+  font-size: 1.5rem;
+  color: #808080;
+  padding-top: 0;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-image {
+  margin-left: 3rem;
+  max-width: 30rem;
+  max-height: 34rem;
+}
+
+.product-rating {
+  margin-bottom: 1rem;
+  font-size: small;
+}
+
+.container {
+  width: 30rem;
 }

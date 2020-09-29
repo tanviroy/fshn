@@ -2,28 +2,29 @@ This is a helper file that will help us understand the codebase of the project. 
 
 HOW TO RUN THE APP
 1. Clone the master version of the repository by "git clone https://github.com/tanviroy/ap-project1.git"
-2. Then enter "npm install" in the root directory (/ap-project1) to install dependencies
+2. Then enter "npm install" in the root directory (/ap-project1) and frontend directory (/ap-project1/frontend) to install dependencies
 3. Open the entire project in an IDE (VSCode is great). Open a terminal and in the root directory (/ap-project1) run "npm start" to start the backend server.
 4. Open another terminal in the frontend directory (/frontend) and run "npm start" to start React.
 
 CODEBASE
 /BACKEND 
-/data.js: This is the master file of all product data. Products are stored as objects. Products are currently being served from this file but will shift to a database later.
-/server.js: This is the entry point for the backend (aka the index.js file). All backend dependencies are connected here. Mongoose is connected, RESTful routes to be defined.
+/data.js: This is the master file of all product data. Products are stored as objects. Data from here served to API http://localhost:4000/api/products. Products are currently being served from this file but will shift to a database later.
 /passportConfig.js: This is where authentication strategies for passport js are confugured. Currently, only supports local authentication, O-Auth to be added.
-/user.js: This is a Mongoose schema for a user. Currently only has username and password
-
+/server.js: This is the entry point for the backend (aka the index.js file). All backend dependencies are connected here. Mongoose is connected, RESTful routes defined. 
+/user.js: This is a Mongoose schema (model) for a user. Currently only has username and password
 
 /FRONTEND
 /public: (Do not remove any of the default files in this directory.)
+/imgs: All product images
 
 /src:
+/components/products.js: This is the Product component (blueprint code to dynamically serve product data)
 /Pages/Home.js: This is the Home Page - main page, will show all products here
 /Pages/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
 /Pages/Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
-/App.js: This is the main file containing the core of the application. It holds major routes and renders components. 
-/App.css: This is the main CSS file. Linked to App.js
-/index.css: This is the main .css file containing *all* the styling for the elements of each page. 
+/App.js: This is the main file containing the core of the application. It holds major routes and renders pages (Home, Cart, SignUp, Profile) as components. 
+/App.css: This is the main CSS file that we will add to. Linked to App.js
+/index.css: This is the wrapper CSS file and can override App.css. We don't need to add to this.
 /index.js: This is the starter file, containing React and the application essentially. Do NOT mess with this file!
 
 OTHERS

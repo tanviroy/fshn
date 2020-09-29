@@ -1,4 +1,5 @@
 // This is the master file of all product data. Products are stored as objects.
+// Data from here served to API http://localhost:4000/api/products
 // Products are currently being served from this file but will shift to a database later. 
 
 export default {
