@@ -95,15 +95,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/api/products/:id", (req, res) => {
-    const productId = req.params.id; // productId stores the ID of the product a request was made for
-    const product = data.products.find(x => x._id === productId); // Check to see if this product exists in database
-    if (product)
-        res.send(product); // if yes, direct to product page
-    else 
-        res.status(404).send({msg: "Product Not Found!"}); // if not throw this msg
-});
-
 app.get("/api/products", (req, res) => {
   res.send(data.products);
 });
