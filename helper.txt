@@ -2,7 +2,7 @@ This is a helper file that will help us understand the codebase of the project. 
 
 HOW TO RUN THE APP
 1. Clone the master version of the repository by "git clone https://github.com/tanviroy/ap-project1.git"
-2. Then enter "npm install" in the root directory (/ap-project1) to install dependencies
+2. Then enter "npm install" in the root directory (/ap-project1) and frontend directory (/ap-project1/frontend) to install dependencies
 3. Open the entire project in an IDE (VSCode is great). Open a terminal and in the root directory (/ap-project1) run "npm start" to start the backend server.
 4. Open another terminal in the frontend directory (/frontend) and run "npm start" to start React.
 
