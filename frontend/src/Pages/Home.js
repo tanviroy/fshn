@@ -27,8 +27,8 @@ class Home extends Component {
     <div>
       
       <h1>This is the Home Page</h1>
-      <header>
-      <ul>
+      {/* <header> */}
+      {/* <ul>
         <Link to="/profile">
           <li>Profile</li>
         </Link>
@@ -38,8 +38,8 @@ class Home extends Component {
         <Link to="/login">
           <li>Login</li>
         </Link>
-      </ul>
-      </header>
+      </ul> */}
+      {/* </header> */}
 
       <div>
         <Container id="content">
