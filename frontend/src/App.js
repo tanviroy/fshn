@@ -10,6 +10,8 @@ import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import EpicMenu from './EpicMenu';
 import logo from './logo.png';
+// import _Navbar from './components/_Navbar';
+
 
 class App extends Component {
 
@@ -25,9 +27,10 @@ class App extends Component {
     return (
 
         <BrowserRouter>
+          {/* <_Navbar /> */}
             <div>
               <header>
-                <h1>AP Project 1</h1>
+                {/* <h1>AP Project 1</h1> */}
               </header>
             </div>
             <div className="container center">

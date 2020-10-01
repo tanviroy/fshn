@@ -6,7 +6,7 @@ import "../App.css";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Products from "../components/products";
-
+import HeroSection from "../components/HeroSection";
 class Home extends Component {
 
   state = {
@@ -25,8 +25,9 @@ class Home extends Component {
   render() {
     return (
     <div>
-      
-      <h1>This is the Home Page</h1>
+      <Link />
+      <HeroSection />
+      {/* <h1>This is the Home Page</h1> */}
       {/* <header> */}
       {/* <ul>
         <Link to="/profile">
