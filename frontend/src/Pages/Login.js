@@ -6,6 +6,7 @@ import Axios from "axios"; // for making http requests
 export default function Login() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [registerMobile, setRegisterMobile] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [data, setData] = useState(null);
@@ -16,11 +17,13 @@ export default function Login() {
       data: {
         username: registerUsername,
         password: registerPassword,
+        mobile: registerMobile,
       },
       withCredentials: true,
-      url: "http://localhost:4000/register",
+      url: "http://localhost:5000/register",
     }).then((res) => console.log(res));
   };
+
   const login = () => {
     Axios({
       method: "POST",
@@ -29,17 +32,17 @@ export default function Login() {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/login",
+      url: "http://localhost:5000/login",
     }).then((res) => console.log(res));
   };
   const getUser = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/user",
+      url: "http://localhost:5000/user",
     }).then((res) => {
       setData(res.data);
-      console.log(res.data);
+      console.log(res);
     });
   };
   return (
@@ -49,6 +52,11 @@ export default function Login() {
         <input
           placeholder="username"
           onChange={(e) => setRegisterUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="mobile number"
+          onChange={(e) => setRegisterMobile(e.target.value)}
         />
         <br />
         <input
@@ -79,7 +87,7 @@ export default function Login() {
       <div>
         <h1>Get User</h1>
         <button onClick={getUser}>Submit</button>
-        {data ? <h1>Welcome Back {data.username}</h1> : null}
+        {data ? <h1>{data.username} is now logged in!</h1> : null}
       </div>
     </div>
   );

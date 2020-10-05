@@ -16,10 +16,12 @@ const expressSession = require("express-session");
 const bodyParser = require("body-parser");
 
 const app = express();
-const PORT = 4000;
+const PORT = 5000;
 
 const User = require("./user");
 import data from "./data";
+
+var sess;
 
 //========================================= MONGODB CONNECT
 
@@ -80,6 +82,7 @@ app.post("/register", (req, res) => {
 
       const newUser = new User({
         username: req.body.username,
+        mobile: req.body.mobile,
         password: hashedPassword,
       });
       await newUser.save();
@@ -87,8 +90,76 @@ app.post("/register", (req, res) => {
     }
   });
 });
+app.post("/update/number", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.mobile = req.body.mobile;
+      await doc.save();
+      res.send("User mobile updated");
+    }
+  });
+});
+app.post("/update/address", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.address = req.body.address;
+      await doc.save();
+      res.send("User address updated");
+    }
+  });
+});
+app.post("/cart", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.cart.push(req.body.product);
+      await doc.save();
+      res.send("Product added to cart");
+    }
+  });
+});
+app.post("/order", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.orders.push(req.body.product);
+      doc.cart.pull(req.body.product);
+      await doc.save();
+      res.send("New order made");
+    }
+  });
+});
+app.post("/wishlist", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.wishlist.push(req.body.product);
+      doc.cart.pull(req.body.product);
+      await doc.save();
+      res.send("Product moved to wishlist");
+    }
+  });
+});
+app.post("/cancelorder", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist");
+    if (doc) {
+      doc.cart.pull(req.body.product);
+      await doc.save();
+      res.send("Order cancelled");
+    }
+  });
+});
 app.get("/user", (req, res) => {
-  res.send(req.user); // req.user stores the complete user that has been authenticated inside it
+  res.send(req.user); // req.user stores the deserealized user that has been authenticated inside it
 });
 
 app.get("/", (req, res) => {
@@ -96,12 +167,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/products/:id", (req, res) => {
-    const productId = req.params.id; // productId stores the ID of the product a request was made for
-    const product = data.products.find(x => x._id === productId); // Check to see if this product exists in database
-    if (product)
-        res.send(product); // if yes, direct to product page
-    else 
-        res.status(404).send({msg: "Product Not Found!"}); // if not throw this msg
+  const productId = req.params.id; // productId stores the ID of the product a request was made for
+  const product = data.products.find((x) => x._id === productId); // Check to see if this product exists in database
+  if (product) res.send(product);
+  // if yes, direct to product page
+  else res.status(404).send({ msg: "Product Not Found!" }); // if not throw this msg
 });
 
 app.get("/api/products", (req, res) => {

@@ -1,8 +1,11 @@
 /* This is the main CSS file that we will add to. Linked to App.js */
+.App {
+  text-align: center;
+}
 
 @font-face {
-  font-family: 'fonty';
-  src: URL('font.ttf') format('truetype');
+  font-family: "fonty";
+  src: URL("font.ttf") format("truetype");
 }
 
 html {
@@ -40,8 +43,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  font:inherit;
-  font-family: 'fonty';
+  font: inherit;
+  font-family: "fonty";
 }
 
 .products li {
@@ -51,7 +54,7 @@ body {
   flex: 0 1 30rem;
   margin: 1rem;
   height: 47rem;
-  border-bottom: .1rem #c0c0c0 solid;
+  border-bottom: 0.1rem #c0c0c0 solid;
 }
 
 .product {
@@ -98,7 +101,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .home,
@@ -113,7 +116,7 @@ body {
 }
 
 .services {
-  background-image: url('/images/img-2.jpg');
+  background-image: url("/images/img-2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -122,7 +125,7 @@ body {
 }
 
 .products {
-  background-image: url('/images/img-1.jpg');
+  background-image: url("/images/img-1.jpg");
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -131,7 +134,7 @@ body {
 }
 
 .sign-up {
-  background-image: url('/images/img-8.jpg');
+  background-image: url("/images/img-8.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
