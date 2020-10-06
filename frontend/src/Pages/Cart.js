@@ -6,6 +6,7 @@ import Axios from "axios";
 export default function Cart() {
   const [data, setData] = useState(null);
   const [cartProduct, setCartProduct] = useState("");
+
   const getCart = () => {
     Axios({
       method: "GET",
@@ -15,6 +16,7 @@ export default function Cart() {
       setData(res.data);
     });
   };
+
   const addToCart = () => {
     Axios({
       method: "POST",
@@ -25,6 +27,7 @@ export default function Cart() {
       url: "http://localhost:5000/cart",
     }).then((res) => console.log(res));
   };
+
   const addToWishlist = (order) => {
     Axios({
       method: "POST",
@@ -35,6 +38,7 @@ export default function Cart() {
       url: "http://localhost:5000/wishlist",
     }).then((res) => console.log(res));
   };
+
   const orderProduct = (order) => {
     Axios({
       method: "POST",
@@ -45,6 +49,7 @@ export default function Cart() {
       url: "http://localhost:5000/order",
     }).then((res) => console.log(res));
   };
+
   const orderCancel = (order) => {
     Axios({
       method: "POST",
@@ -55,12 +60,13 @@ export default function Cart() {
       url: "http://localhost:5000/cancelorder",
     }).then((res) => console.log(res));
   };
+
   return (
-    <div>
+    <div className="cart">
       <h1>This is the Cart Page</h1>
 
       <input
-        placeholder="add product to cart"
+        placeholder="Add a product to cart"
         onChange={(e) => setCartProduct(e.target.value)}
       />
 
@@ -73,7 +79,6 @@ export default function Cart() {
         {data ? (
           <div>
             <h3>Your Cart</h3>
-            <h5>
               <ul>
                 {data.cart.map((order, index) => (
                   <li key={index}>
@@ -90,7 +95,6 @@ export default function Cart() {
                   </li>
                 ))}
               </ul>
-            </h5>
           </div>
         ) : null}
       </div>

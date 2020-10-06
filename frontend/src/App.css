@@ -1,7 +1,8 @@
 /* This is the main CSS file that we will add to. Linked to App.js */
-.App {
-  text-align: center;
-}
+
+/*************************
+   Default CSS stylings
+*************************/
 
 @font-face {
   font-family: "fonty";
@@ -10,40 +11,70 @@
 
 html {
   font-size: 62.5%;
-  /* 16px * 62.5 = 10px = 1rem */
   box-sizing: border-box;
-}
-
-body {
-  font: 1.6rem;
-  font-family: Helvetica;
-  height: 100vh;
   margin: 0;
 }
 
-#root {
-  height: 100%;
+body {
+  background-color: #EDCA0D;
+  font-family: Helvetica;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.grid-container {
+ul, li {
+  list-style-type: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+a {
+  color: #EDCA0D;
+}
+
+a:hover{
+  color: #FAF160;
+}
+
+.footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    font-size: large;
+}
+
+.wrapper {
   display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
-  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
-/* Home Screen */
-.products {
+.products-container {
   margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   font: inherit;
+  list-style-type: none;
   font-family: "fonty";
 }
 
@@ -92,52 +123,66 @@ body {
   font-size: small;
 }
 
-.container {
-  width: 30rem;
+input {
+  margin: 0.5%;
+  width: 33%;
 }
 
-/* /* _Navbar */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "PT Sans", sans-serif;
+button {
+  border-radius: 0px;
+  transition-duration: 0.4s;
+  background-color: black;
+  color: white;
+  border: none;
+  width: auto;
+  height: auto;
+  font-size: small;
+  margin: 1%;
 }
 
-.home,
-.services,
-.products,
-.sign-up {
-  display: flex;
-  height: 90vh;
-  align-items: center;
+button:hover {
+  border-radius: 0px;
+  background-color: white;
+  color: black;
+}
+
+/*************************
+      1. Home Page
+*************************/
+
+/*************************
+     2. Products Page
+*************************/
+
+/*************************
+     3. Product Page
+*************************/
+
+/*************************
+      4. Cart Page
+*************************/
+
+/*************************
+      5. Login Page
+*************************/
+
+.login {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
   justify-content: center;
-  font-size: 3rem;
+  align-items: center;
+  border: black solid;
+  padding: 2%;
+  border-radius: 5%;
+  margin-bottom: 5%;
 }
 
-.services {
-  background-image: url("/images/img-2.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
+/*************************
+      6. Signup Page
+*************************/
 
-.products {
-  background-image: url("/images/img-1.jpg");
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
-.sign-up {
-  background-image: url("/images/img-8.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
+/*************************
+      7. Profile Page
+*************************/

@@ -1,8 +1,8 @@
 This is a helper file that will help us understand the codebase of the project. This is being dynamically updated by Tanvi.
 
 HOW TO RUN THE APP
-1. Clone the master version of the repository by "git clone https://github.com/tanviroy/ap-project1.git"
-2. Then enter "npm install" in the root directory (/ap-project1) and frontend directory (/ap-project1/frontend) to install dependencies
+1. Clone the master branch of the repository by "git clone https://github.com/tanviroy/ap-project1.git"
+2. Then enter "npm install" in the root directory (/ap-project1) and in the frontend directory (/ap-project1/frontend) to install all dependencies
 3. Open the entire project in an IDE (VSCode is great). Open a terminal and in the root directory (/ap-project1) run "npm start" to start the backend server.
 4. Open another terminal in the frontend directory (/frontend) and run "npm start" to start React.
 
@@ -18,10 +18,22 @@ CODEBASE
 /imgs: All product images
 
 /src:
-/components/products.js: This is the Product component (blueprint code to dynamically serve product data)
-/Pages/Home.js: This is the Home Page - main page, will show all products here
-/Pages/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
-/Pages/Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
+
+/components: (files begin in lowercase and components are have suffix "Comp" to them)
+/carousel.js: This is the Carousel Component - "CarouselComp"
+/footer.js: This is the Footer Component - "FooterComp"
+/navbar.js: This is the Navigation bar Component - "NavbarComp"
+/products.js: This is the Products Component - "ProductsComp" (blueprint code to dynamically serve product data)
+
+
+/Pages: (files begin in uppercase, each of these pages are also components (classes/functions))
+/Home.js: This is the Home Page - main page. Has a carousel landing and featured products.
+/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
+/Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
+/Profile.js: This is the Profile Page - users can view and update their information here.
+/T&C.js: This is the Terms and Conditions Page 
+
+
 /App.js: This is the main file containing the core of the application. It holds major routes and renders pages (Home, Cart, SignUp, Profile) as components. 
 /App.css: This is the main CSS file that we will add to. Linked to App.js
 /index.css: This is the wrapper CSS file and can override App.css. We don't need to add to this.

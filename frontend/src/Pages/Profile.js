@@ -1,4 +1,4 @@
-// This is the Profile Page - users can see all their profile details here
+// This is the Profile Page - users can view and update their information here.
 
 import React, { useState } from "react";
 import Axios from "axios";
@@ -17,6 +17,7 @@ export default function Profile() {
       setData(res.data);
     });
   };
+
   const updateNum = () => {
     Axios({
       method: "POST",
@@ -28,6 +29,7 @@ export default function Profile() {
       url: "http://localhost:5000/update/number",
     }).then((res) => console.log(res));
   };
+
   const updateAdd = () => {
     Axios({
       method: "POST",
@@ -39,6 +41,7 @@ export default function Profile() {
       url: "http://localhost:5000/update/address",
     }).then((res) => console.log(res));
   };
+
   return (
     <div>
       <h1>User Profile</h1>
