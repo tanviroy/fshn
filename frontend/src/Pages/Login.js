@@ -35,6 +35,7 @@ export default function Login() {
       url: "http://localhost:5000/login",
     }).then((res) => console.log(res));
   };
+
   const getUser = () => {
     Axios({
       method: "GET",
@@ -45,44 +46,47 @@ export default function Login() {
       console.log(res);
     });
   };
+  
   return (
-    <div className="App">
+    <div className="login">
       <div>
         <h1>Register Now!</h1>
         <input
-          placeholder="username"
+          placeholder="Username"
           onChange={(e) => setRegisterUsername(e.target.value)}
         />
         <br />
         <input
-          placeholder="mobile number"
+          placeholder="Mobile Number"
           onChange={(e) => setRegisterMobile(e.target.value)}
         />
         <br />
         <input
-          placeholder="password"
+          placeholder="Password"
           type="password"
           onChange={(e) => setRegisterPassword(e.target.value)}
         />
         <br />
         <button onClick={register}>Submit</button>
       </div>
+      <br /><br />
 
       <div>
         <h1>Login</h1>
         <input
-          placeholder="username"
+          placeholder="Username"
           onChange={(e) => setLoginUsername(e.target.value)}
         />
         <br />
         <input
-          placeholder="password"
+          placeholder="Password"
           type="password"
           onChange={(e) => setLoginPassword(e.target.value)}
         />
         <br />
         <button onClick={login}>Submit</button>
       </div>
+      <br /><br />
 
       <div>
         <h1>Get User</h1>

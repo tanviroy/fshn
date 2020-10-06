@@ -1,15 +1,15 @@
-// This is the Product component (blueprint code to dynamically serve product data)
+// This is the Products Component - "ProductsComp" (blueprint code to dynamically serve product data)
 
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 
-const Products = ({ products }) => {
+const ProductsComp = ({ products }) => {
   return (
     <div>
-      <center><h1>Products List</h1></center>
+    <center><h1>Featured Products</h1></center>
 
-      <ul className="products">
+    <div className="products-container">
           {products.map((product) => (
               <li key={product._id}>
                   <div className="product">
@@ -25,9 +25,9 @@ const Products = ({ products }) => {
                   </div>
               </li>
           ))}
-      </ul>
+    </div>
     </div>
   )
 };
 
-export default Products
+export default ProductsComp

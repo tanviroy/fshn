@@ -1,12 +1,13 @@
-// This is the Home Page - main page, will show all products here
+// This is the Home Page - main page. Has a carousel landing and featured products.
 // All necessary components only go here
 
 import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Products from "../components/products";
-import HeroSection from "../components/HeroSection";
+import ProductsComp from "../components/products";
+import CarouselComp from "../components/carousel";
+
 class Home extends Component {
   state = {
     products: [],
@@ -23,29 +24,14 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Link />
-        <HeroSection />
-        {/* <h1>This is the Home Page</h1> */}
-        {/* <header> */}
-        {/* <ul>
-        <Link to="/profile">
-          <li>Profile</li>
-        </Link>
-        <Link to="/cart">
-          <li>Cart</li>
-        </Link>
-        <Link to="/login">
-          <li>Login</li>
-        </Link>
-      </ul> */}
-        {/* </header> */}
+        <CarouselComp />
 
-        <div>
           <Container id="content">
-            <Products products={this.state.products} />
+            <ProductsComp products={this.state.products} />
           </Container>
-        </div>
+
       </div>
     );
   }
