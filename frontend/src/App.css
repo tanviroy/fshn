@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background-color: #EDCA0D;
+  background-color: #ffffff;
   font-family: Helvetica;
   height: 100vh;
   margin: 0;
@@ -25,16 +25,18 @@ body {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 80px;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,23 +44,22 @@ ul, li {
 }
 
 a {
-  color: #EDCA0D;
+  color: #edca0d;
 }
 
-a:hover{
-  color: #FAF160;
+a:hover {
+  color: #faf160;
 }
 
 .footer {
-    background-color: #000000;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    height: 150px;
-    width: 100%;
-    font-size: large;
+  background-color: #000000;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  height: 17%;
+  width: 100%;
+  font-size: large;
 }
 
 .wrapper {
@@ -116,6 +117,12 @@ a:hover{
   margin-left: 3rem;
   max-width: 30rem;
   max-height: 34rem;
+  filter: grayscale(100%);
+}
+
+.product-image:hover {
+  filter: grayscale(0%);
+  transform: scale(0.9);
 }
 
 .product-rating {
@@ -150,6 +157,11 @@ button:hover {
       1. Home Page
 *************************/
 
+.banner {
+  margin: 0%;
+  margin-top: 0px;
+}
+
 /*************************
      2. Products Page
 *************************/
@@ -175,7 +187,6 @@ button:hover {
   align-items: center;
   border: black solid;
   padding: 2%;
-  border-radius: 5%;
   margin-bottom: 5%;
 }
 

@@ -1,22 +1,40 @@
 // Navigation bar Component - "NavbarComp"
 
-import React, {Component} from "react";
-import { Navbar, Nav} from "react-bootstrap";
+import React, { Component } from "react";
+import { Navbar, Nav } from "react-bootstrap";
 import "../App.css";
 
-  export default class NavbarComp extends Component {
-    render() {    
-      return (
-
-        <Navbar style={{backgroundColor: "#020202", padding: "2%", height: "65px", fontSize: "2rem"}}>
-              <Navbar.Brand href="/" style={{fontSize: "2.5rem", color: "white"}}>FSHN</Navbar.Brand>
-              <Navbar.Collapse className="justify-content-end">
-                <Nav.Link href="/cart"><a>Cart</a></Nav.Link>
-                <Nav.Link href="/login"><a>Login</a></Nav.Link>
-                <Nav.Link href="/profile"><a>Profile</a></Nav.Link>
-              </Navbar.Collapse>
-        </Navbar>
-        
-      );
-    }
+export default class NavbarComp extends Component {
+  render() {
+    return (
+      <Navbar
+        style={{
+          backgroundColor: "#020202",
+          padding: "2%",
+          height: "65px",
+          fontSize: "2rem",
+        }}
+        fixed="top"
+      >
+        <Navbar.Brand href="/" style={{ fontSize: "2.5rem", color: "white" }}>
+          <img
+            src="https://res.cloudinary.com/dl6m7txan/image/upload/v1602041582/FSHN-removebg-preview_oear1z.png"
+            height="60px"
+            alt="FSHN"
+          />
+        </Navbar.Brand>
+        <Navbar.Collapse className="justify-content-end">
+          <Nav.Link href="/cart">
+            <a href="/cart">Cart</a>
+          </Nav.Link>
+          <Nav.Link href="/login">
+            <a href="/login">Login</a>
+          </Nav.Link>
+          <Nav.Link href="/profile">
+            <a href="/profile">Profile</a>
+          </Nav.Link>
+        </Navbar.Collapse>
+      </Navbar>
+    );
   }
+}

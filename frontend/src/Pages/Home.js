@@ -24,14 +24,17 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Link />
-        <CarouselComp />
+      <div>
+        <div className="banner">
+          <Link />
+          <CarouselComp />
+        </div>
 
+        <div className="container">
           <Container id="content">
             <ProductsComp products={this.state.products} />
           </Container>
-
+        </div>
       </div>
     );
   }
