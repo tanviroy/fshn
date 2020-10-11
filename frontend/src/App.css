@@ -17,7 +17,7 @@ html {
 
 body {
   background-color: #ffffff;
-  font-family: Helvetica;
+  font-family: "fonty";
   height: 100vh;
   margin: 0;
   justify-content: center;
@@ -114,7 +114,6 @@ a:hover {
 }
 
 .product-image {
-  margin-left: 3rem;
   max-width: 30rem;
   max-height: 34rem;
   filter: grayscale(100%);
@@ -197,3 +196,32 @@ button:hover {
 /*************************
       7. Profile Page
 *************************/
+
+
+.heading {
+	font-size: 30px;
+	padding: 16px 0;
+	color: #444;
+	text-align: center;
+}
+/*Container*/
+
+.search-label {
+	position: relative;
+}
+.container input {
+	width: 100%;
+	padding: 16px;
+	font-size: 36px;
+	font-style: italic;
+	color: #444;
+	box-sizing: border-box;
+	outline: none;
+}
+.search-icon {
+	position: absolute;
+	top: -10px;
+	font-size: 24px;
+	color: #555;
+	right: 18px;
+}

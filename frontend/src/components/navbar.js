@@ -11,6 +11,8 @@ export default class NavbarComp extends Component {
         style={{
           backgroundColor: "#020202",
           padding: "2%",
+          paddingRight: "4%",
+          paddingLeft: "0%",
           height: "65px",
           fontSize: "2rem",
         }}

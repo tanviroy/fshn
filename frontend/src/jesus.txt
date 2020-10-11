@@ -1,0 +1,35 @@
+// Navigation bar Component - "SearchComp"
+
+import React, { Component, useState, useEffect } from "react";
+import "../App.css";
+// import products from "../data";
+
+class SearchComp extends Component {
+
+  state = {
+    products: [
+      'Jackets', 'Tops', 'Pants', 'Blouses', 'Rompers', 'Dresses', 'Blazers', 
+    ],
+    searchTerm: ''
+  }
+
+  editSearchTerm = (e) => {
+    this.setState({searchTerm: e.target.value})
+  }
+
+  dynamicSearch = () => {
+    return this.state.products.filter(product => product.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+  }
+
+    render(){
+      return (
+        <div style = {{textAlign: 'center', paddingTop: '30vh'}}>
+          <input type = 'text' value = {this.state.searchTerm} onChange = {this.editSearchTerm} placeholder = 'Search for a product!'/>
+          <br></br>
+          <div products = {this.dynamicSearch()}></div>
+        </div>
+      );
+    }
+}
+
+export default SearchComp;
