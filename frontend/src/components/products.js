@@ -13,7 +13,7 @@ const ProductsComp = ({ products }) => {
           <li key={product._id}>
             <div className="product">
               <div className="container">
-                <Link to={"/products/${ this.props.product.id"}>
+                <Link to={"/product/" + product._id}>
                   <img
                     className="product-image"
                     src={product.image}
