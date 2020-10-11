@@ -7,17 +7,13 @@ import { Link } from "react-router-dom";
 const ProductsComp = ({ products }) => {
   return (
     <div>
-      <center>
-        <h1> ... </h1>
-        <h1>Featured Products</h1>
-      </center>
 
       <div className="products-container">
         {products.map((product) => (
           <li key={product._id}>
             <div className="product">
               <div className="container">
-                <Link to={"/product/" + product._id}>
+                <Link to={"/products/${ this.props.product.id"}>
                   <img
                     className="product-image"
                     src={product.image}
@@ -26,12 +22,12 @@ const ProductsComp = ({ products }) => {
                 </Link>
               </div>
               <div className="product-name">
-                <Link to={"/product/" + product._id}>{product.name}</Link>
+                <Link to={"/products/" + product._id}>{product.name}</Link>
               </div>
               <div className="product-brand">{product.brand}</div>
               <div className="product-price">${product.price}</div>
               <div className="product-rating">
-                {product.rating} Stars ({product.numReviews} Reviews)
+                {product.rating} Stars ({product.reviews} Reviews)
               </div>
             </div>
           </li>

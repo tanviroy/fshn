@@ -7,7 +7,7 @@ import "../App.css";
 export default class CarouselComp extends Component {
   render() {
     return (
-      <Carousel style={{ width: "100%", height: "40%" }} interval={1000}>
+      <Carousel style={{ width: "100%", height: "40%" }} interval={2000}>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -16,8 +16,8 @@ export default class CarouselComp extends Component {
             style={{ height: "20%" }}
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Explore the latest range of apparels for everyone</h3>
+            <p>&emsp; &emsp; &emsp;</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -29,8 +29,8 @@ export default class CarouselComp extends Component {
             style={{ height: "20%" }}
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Urban fashion at affordable rates</h3>
+            <p>&emsp; &emsp; &emsp;</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -42,10 +42,8 @@ export default class CarouselComp extends Component {
             style={{ height: "20%" }}
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Original Style. Responsibly Made.</h3>
+            <p>&emsp; &emsp; &emsp;</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
