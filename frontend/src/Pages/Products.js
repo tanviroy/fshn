@@ -9,10 +9,11 @@ class Products extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:5000/products")
+    fetch("http://localhost:5000/getproducts")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ products: data });
+        console.log(data);
       })
       .catch(console.log);
   }

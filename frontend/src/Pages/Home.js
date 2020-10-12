@@ -4,7 +4,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import ProductsComp from "../components/products";
 import CarouselComp from "../components/carousel";
 
@@ -14,7 +14,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:5000/products")
+    fetch("http://localhost:5000/getproducts")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ products: data });
@@ -26,7 +26,7 @@ class Home extends Component {
     return (
       <div>
         <div className="banner">
-          <Link />
+
           <CarouselComp />
         </div>
 

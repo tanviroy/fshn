@@ -1,103 +1,94 @@
 // This is the Cart Page - will show products (if any) that are in the cart
 
-import React, { useState } from "react";
+//<Container id="content">
+//<ProductsHorizontal products={this.state.user.cart} />
+//</Container>
+
+import React, { Component } from "react";
+import { Container } from "react-bootstrap";
+import ProductsHorizontal from "../components/products-horizontal";
 import Axios from "axios";
 
-export default function Cart() {
-  const [data, setData] = useState(null);
-  const [cartProduct, setCartProduct] = useState("");
 
-  const getCart = () => {
+class Cart extends Component {
+  state = {
+    products: [],
+  };
+
+
+
+  componentDidMount() {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/user",
+      url: "http://localhost:5000/getcartitems",
     }).then((res) => {
-      setData(res.data);
+      this.setState({ products: res.data });
+      console.log(res.data);
     });
-  };
+  }
 
-  const addToCart = () => {
+  moveToWishlist(productId){
     Axios({
       method: "POST",
-      data: {
-        product: cartProduct,
-      },
       withCredentials: true,
-      url: "http://localhost:5000/cart",
-    }).then((res) => console.log(res));
-  };
+      data:{
+        productId: productId,
+      },
+      url: "http://localhost:5000/movetowishlist",
+    }).then((res) => {
+      console.log(res);
+    });
+    //console.log(productId);
+  }
 
-  const addToWishlist = (order) => {
+  removeFromCart(productId){
     Axios({
       method: "POST",
-      data: {
-        product: order,
-      },
       withCredentials: true,
-      url: "http://localhost:5000/wishlist",
-    }).then((res) => console.log(res));
-  };
+      data:{
+        productId: productId,
+      },
+      url: "http://localhost:5000/removefromcart",
+    }).then((res) => {
+      console.log(res);
+    });
+    //console.log(productId);
+  }
 
-  const orderProduct = (order) => {
+  buyProduct(productId){
     Axios({
       method: "POST",
-      data: {
-        product: order,
-      },
       withCredentials: true,
-      url: "http://localhost:5000/order",
-    }).then((res) => console.log(res));
-  };
-
-  const orderCancel = (order) => {
-    Axios({
-      method: "POST",
-      data: {
-        product: order,
+      data:{
+        productId: productId,
       },
-      withCredentials: true,
-      url: "http://localhost:5000/cancelorder",
-    }).then((res) => console.log(res));
-  };
+      url: "http://localhost:5000/buyproduct",
+    }).then((res) => {
+      console.log(res);
+    });
+    //console.log(productId);
+  }
 
-  return (
-    <div className="cart">
-      <h1>This is the Cart Page</h1>
-
-      <input
-        placeholder="Add a product to cart"
-        onChange={(e) => setCartProduct(e.target.value)}
-      />
-
-      <button onClick={() => addToCart()}>Add to Cart</button>
-
-      <br />
-
+  render() {
+    return (
       <div>
-        <button onClick={() => getCart()}>View Cart</button>
-        {data ? (
-          <div>
-            <h3>Your Cart</h3>
-              <ul>
-                {data.cart.map((order, index) => (
-                  <li key={index}>
-                    {order}
-                    <button onClick={() => orderProduct(order)}>
-                      Order Now
-                    </button>
-                    <button onClick={() => addToWishlist(order)}>
-                      Add to Wishlist
-                    </button>
-                    <button onClick={() => orderCancel(order)}>
-                      Remove from Cart
-                    </button>
-                  </li>
-                ))}
-              </ul>
-          </div>
-        ) : null}
+
+        <center>
+          <h1 style={{fontSize: "4rem"}}> This is the cart page</h1>
+        </center>
+
+        <div className="container">
+          <Container id="content">
+            <ProductsHorizontal products={this.state.products}
+                                moveToWishlist={this.moveToWishlist}
+                                removeFromCart={this.removeFromCart}
+                                buyProduct={this.buyProduct} />
+          </Container>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default Cart;

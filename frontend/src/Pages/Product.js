@@ -1,33 +1,78 @@
 import React, {Component} from "react";
 import "../App.css";
-import data from "../data";
+import { Container } from "react-bootstrap";
+import ProductsComp from "../components/products";
+import Axios from "axios";
 
 class Product extends Component {
 
-    // When I tried to get the data coming from "products.product" aka each individual product
-    // it doesn't worked and I have tried 4 different ways to do it and given up.
+    state = {
+      products: [],
+    };
+
+    componentDidMount() {
+      let url = window.location.pathname
+      let prod_id = url.split("/")[2]
+      fetch("http://localhost:5000/getproductbyid/" + prod_id)
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({ products: data });
+          console.log(data);
+        })
+        .catch(console.log);
+    }
+
     render() {
 
-    const product = {
-          name: "Cool Jacket",
-          description: "is a cool jacket",
-      };   
-      let url = window.location.pathname
-      let prod_id = url.split("/")
+      const addToCart = (cartProduct) => {
+        Axios({
+          method: "POST",
+          data: {
+            productId: cartProduct,
+          },
+          withCredentials: true,
+          url: "http://localhost:5000/addtocart",
+        }).then((res) => console.log(res));
+      };
+
+      const addToWishlist = (cartProduct) => {
+        Axios({
+          method: "POST",
+          data: {
+            productId: cartProduct,
+          },
+          withCredentials: true,
+          url: "http://localhost:5000/addtowishlist",
+        }).then((res) => console.log(res));
+      };
+
       return (
         <div>
-          <ProductComp product={product} />
-          <h1>{data.products[prod_id[2]-1].name}</h1>
+          <div className="product-container">
+          <div className="item-a">
+          <Container id="content">
+            <ProductsComp products={this.state.products} />
+          </Container>
+        </div>
+        <div className="item-b">
+          <Container id="content">
+          {this.state.products.map((product) =>(
+            <div>
+              <div className="product-name">{product.name}</div>
+              <div className="product-rating"><p>{product.description}</p></div>
+              <button onClick={() => addToCart(product._id)}>Add to Cart</button>
+              <button onClick={() => addToWishlist(product._id)}>Save for Later</button>
+            </div>
+            
+          ))}
+          </Container>
+        </div>
+        </div>
         </div>
       );
     }
   }
    
-  const ProductComp = props => (
-    <div>
-        <h1>{props.product.name}</h1><br/>
-        <h1>{props.product.description}</h1>
-    </div>
-  )
+
    
   export default Product;

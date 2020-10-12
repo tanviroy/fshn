@@ -1,18 +1,16 @@
-// This is the Products Component - "ProductsComp" (blueprint code to dynamically serve product data)
-
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 
-const ProductsComp = ({ products }) => {
+const ProductsHorizontal = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
   return (
     <div>
 
-      <div className="products-container">
+      <div className = "products-horizontal">
         {products.map((product) => (
           <li key={product._id}>
             <div className="product">
-              <div className="container">
+
                 <Link to={"/product/" + product._id}>
                   <img
                     className="product-image"
@@ -20,13 +18,12 @@ const ProductsComp = ({ products }) => {
                     alt="product"
                   />
                 </Link>
-              </div>
+
               <div className="product-name">
-                <Link to={"/product/" + product._id}>{product.name}</Link>
-              </div>
-              <div className="product-price">${product.price}</div>
-              <div className="product-rating">
-                {product.rating} Stars ({product.reviews} Reviews)
+                {product.name} ${product.price}<br/>
+                <button onClick={() => moveToWishlist(product._id)}>Move to Wishlist</button>
+                <button onClick={() => removeFromCart(product._id)}>Remove from Cart</button>
+                <button onClick={() => buyProduct(product._id)}>Buy Now!</button>
               </div>
             </div>
           </li>
@@ -36,4 +33,4 @@ const ProductsComp = ({ products }) => {
   );
 };
 
-export default ProductsComp;
+export default ProductsHorizontal;
