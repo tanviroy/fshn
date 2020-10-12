@@ -169,6 +169,27 @@ button:hover {
      3. Product Page
 *************************/
 
+.product-container {
+  display: grid;
+  grid-template-columns: 5fr, 1fr;
+  grid-template-rows: 1fr;
+}
+
+.item-a {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.item-b {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: center;
+}
+
 /*************************
       4. Cart Page
 *************************/
@@ -197,31 +218,30 @@ button:hover {
       7. Profile Page
 *************************/
 
-
 .heading {
-	font-size: 30px;
-	padding: 16px 0;
-	color: #444;
-	text-align: center;
+  font-size: 30px;
+  padding: 16px 0;
+  color: #444;
+  text-align: center;
 }
 /*Container*/
 
 .search-label {
-	position: relative;
+  position: relative;
 }
 .container input {
-	width: 100%;
-	padding: 16px;
-	font-size: 36px;
-	font-style: italic;
-	color: #444;
-	box-sizing: border-box;
-	outline: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 36px;
+  font-style: italic;
+  color: #444;
+  box-sizing: border-box;
+  outline: none;
 }
 .search-icon {
-	position: absolute;
-	top: -10px;
-	font-size: 24px;
-	color: #555;
-	right: 18px;
+  position: absolute;
+  top: -10px;
+  font-size: 24px;
+  color: #555;
+  right: 18px;
 }

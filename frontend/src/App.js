@@ -10,6 +10,7 @@ import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
+import AddProduct from "./Pages/AddProduct";
 import TnC from "./Pages/T&C";
 
 import NavbarComp from "./components/navbar";
@@ -28,6 +29,7 @@ class App extends Component {
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
+        <Route path="/addproduct" exact component={AddProduct} />
         <Route path="/terms-and-conditions" component={TnC} />
         <Route path="/about-us" component={TnC} />
         <Route path="/contact-us" component={TnC} />

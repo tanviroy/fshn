@@ -1,6 +1,16 @@
 // This is the master file of all product data. Products are stored as objects.
 // Data from here served to API http://localhost:4000/api/products
 // Products are currently being served from this file but will shift to a database later. 
+// 1. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/1_aftwak.jpg
+// 2. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/2_oumam3.jpg
+// 3. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429759/3_nhmz6u.jpg
+// 4. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429759/4_mgydfq.jpg
+// 5. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/5_z5df6a.jpg
+// 6. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/6_whg2sv.jpg
+// 7. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/7_dhszeo.jpg
+// 8. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/8_tsvgx9.jpg
+// 9. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/9_ljwm0w.jpg
+//10. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/10_f1qbit.jpg
 
 export default {
     products: [{

@@ -26,15 +26,10 @@ export default class NavbarComp extends Component {
           />
         </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
-          <Nav.Link href="/cart">
-            <a href="/cart">Cart</a>
-          </Nav.Link>
-          <Nav.Link href="/login">
-            <a href="/login">Login</a>
-          </Nav.Link>
-          <Nav.Link href="/profile">
-            <a href="/profile">Profile</a>
-          </Nav.Link>
+          <Nav.Link href="/products">All Products</Nav.Link>
+          <Nav.Link href="/cart">Cart</Nav.Link>
+          <Nav.Link href="/login">Login</Nav.Link>
+          <Nav.Link href="/profile">Profile</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
     );

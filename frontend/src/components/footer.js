@@ -18,17 +18,17 @@ export default class FooterComp extends Component {
           <div className="wrapper">
             <li>
               <Nav.Link href="/about-us">
-                <a href="/about-us">About Us</a>
+                About Us
               </Nav.Link>
             </li>
             <li>
               <Nav.Link href="/terms-and-conditions">
-                <a href="/terms-and-conditions">Terms and Conditions</a>
+                Terms and Conditions
               </Nav.Link>
             </li>
             <li>
               <Nav.Link href="/contact-us">
-                <a href="/contact-us">Contact Us</a>
+                Contact Us
               </Nav.Link>
             </li>
           </div>

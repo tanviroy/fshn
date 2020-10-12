@@ -1,4 +1,4 @@
-// This is a Mongoose schema (model) for a user. Currently only has username and password
+// This is a Mongoose schema (model) for a user
 
 const mongoose = require("mongoose");
 const user = new mongoose.Schema({
