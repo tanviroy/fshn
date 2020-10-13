@@ -256,6 +256,25 @@ app.get("/getproducts", (req, res) => {
     }
   });
 });
+app.get("/getfeaturedproducts", (req, res) => {
+  Product.find({featured : "YES"}, async (err, doc) =>{
+    if (err) throw err;
+    if (doc){
+      await res.send(doc);
+    }
+  });
+});
+app.get("/productsearch/:term", (req, res) => {
+  const searchterm = req.params.term;
+
+  Product.find({$or: [{name : {$regex: searchterm, $options: 'i'}}, {category : {$regex: searchterm, $options: 'i'}}] }, async (err, doc) =>{
+    if (err) throw err;
+    if (doc){
+      await res.send(doc);
+      //console.log(doc);
+    }
+  });
+});
 
 app.get("/getproductbyid/:id", (req, res) => {
   const productId = req.params.id;
