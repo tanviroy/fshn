@@ -5,6 +5,13 @@ import "../App.css";
 import { Link } from "react-router-dom";
 
 const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
+
+  let total = 0;
+
+  for (var i=0; i < products.length; i++) {
+    total = total + products[i].price;
+  }
+
   return (
   <div>
 
@@ -39,7 +46,7 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
   <div className="cart-action">
       <h2 style={{fontWeight: "bold"}}> Subtotal </h2>
       <h3>Your cart has {`${products.length}`} items </h3>
-      <h3>Your total bill is [add price here] </h3>
+      <h3>Your total bill is ${total} </h3>
   </div>
 
 </div>

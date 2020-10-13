@@ -4,11 +4,29 @@ import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
 import ProductsComp from "../components/products";
+import Axios from "axios";
 
 class Shop extends Component {
   state = {
     products: [],
+    searchterm: '',
   };
+
+  editSearchTerm = async(e) => {
+    await this.setState({searchterm: e.target.value});
+    console.log(this.state.searchterm)
+    //console.log(this.state.products)
+    Axios({
+      method: "GET",
+      withCredentials: true,
+  
+      url: "http://localhost:5000/productsearch/"+this.state.searchterm,
+    }).then((res) => {
+      this.setState({ products: res.data });
+      console.log(res.data);
+    });
+
+  }
 
   componentDidMount() {
     fetch("http://localhost:5000/getproducts")
@@ -25,7 +43,10 @@ class Shop extends Component {
       <div>
 
         <center>
-          <h2>Search bar comes here</h2>
+          <div className = "container" style = {{paddingTop: '5vh'}}>
+            <input type = "text" value = {this.state.searchterm} onChange = {this.editSearchTerm} placeholder = "Search for a product..."/>
+          </div>
+
           <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
           <h1 style={{fontSize: "4rem"}}> View Products</h1>
         </center>
