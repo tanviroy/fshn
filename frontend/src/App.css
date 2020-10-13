@@ -28,6 +28,13 @@ body {
   padding-top: 80px;
 }
 
+.heading {
+  font-size: 30px;
+  padding: 16px 0;
+  color: #444;
+  text-align: center;
+}
+
 ul,
 li {
   list-style-type: none;
@@ -67,6 +74,42 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
+
+input {
+  margin: 0.5%;
+  width: 33%;
+}
+
+button {
+  border-radius: 0px;
+  transition-duration: 0.4s;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 15rem;
+  height: auto;
+  font-size: large;
+  margin: 5%;
+}
+
+button:hover {
+  border-radius: 0px;
+  background-color: black;
+  color: #edca0d;
+}
+
+/*************************
+      1. Home Page
+*************************/
+
+.banner {
+  margin: 0%;
+  margin-top: 0px;
+}
+
+/*************************
+     2. Products Page
+*************************/
 
 .products-container {
   margin-top: 5%;
@@ -129,70 +172,119 @@ a:hover {
   font-size: small;
 }
 
-input {
-  margin: 0.5%;
-  width: 33%;
-}
-
-button {
-  border-radius: 0px;
-  transition-duration: 0.4s;
-  background-color: black;
-  color: white;
-  border: none;
-  width: auto;
-  height: auto;
-  font-size: small;
-  margin: 1%;
-}
-
-button:hover {
-  border-radius: 0px;
-  background-color: white;
-  color: black;
-}
-
-/*************************
-      1. Home Page
-*************************/
-
-.banner {
-  margin: 0%;
-  margin-top: 0px;
-}
-
-/*************************
-     2. Products Page
-*************************/
-
 /*************************
      3. Product Page
 *************************/
 
 .product-container {
-  display: grid;
-  grid-template-columns: 5fr, 1fr;
-  grid-template-rows: 1fr;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .item-a {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  flex: 4;
+  margin-left: 5%;
 }
 
 .item-b {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  align-self: center;
+  margin-right: 7.5%;
+  padding: 5%;
+  flex: 3;
+}
+
+.image {
+  width: 60%;
+  height: 80%;
 }
 
 /*************************
       4. Cart Page
 *************************/
+
+.cart {
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  align-items: flex-start;
+}
+
+.shopping-cart {
+  font-size: x-large;
+  padding: 0;
+  margin-top: -1rem;
+}
+
+.qty {
+  font-size: medium;
+}
+
+.cart-list {
+  flex: 3 1 40rem;
+}
+
+.cart-action {
+  flex: 1 1 25rem;
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: medium;
+}
+
+.cart-list-container {
+  list-style-type: none;
+  padding: 1rem;
+  font-size: large;
+  line-height: 3rem;
+}
+
+.cart-list-container li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.cart-list-container li img {
+  max-width: 18rem;
+  max-height: 12rem;
+  padding-right: 2rem;
+}
+
+.cart-list-container li:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cart-image {
+  flex: 1 1;
+}
+
+.cart-name {
+  flex: 8 1;
+  font-size: 2rem;
+}
+
+.cart-price {
+  flex: 1 1;
+  font-size: larger;
+  text-align: right;
+}
+
+.delete-from-cart-button {
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border: 0.15rem #000000 solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #DE9D95;
+}
 
 /*************************
       5. Login Page
@@ -218,30 +310,3 @@ button:hover {
       7. Profile Page
 *************************/
 
-.heading {
-  font-size: 30px;
-  padding: 16px 0;
-  color: #444;
-  text-align: center;
-}
-/*Container*/
-
-.search-label {
-  position: relative;
-}
-.container input {
-  width: 100%;
-  padding: 16px;
-  font-size: 36px;
-  font-style: italic;
-  color: #444;
-  box-sizing: border-box;
-  outline: none;
-}
-.search-icon {
-  position: absolute;
-  top: -10px;
-  font-size: 24px;
-  color: #555;
-  right: 18px;
-}

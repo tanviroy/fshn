@@ -1,4 +1,4 @@
-// Footer Component - "FooterComp"
+// This is the Footer Component for all pages - "FooterComp"
 
 import React, { Component } from "react";
 import { Nav } from "react-bootstrap";

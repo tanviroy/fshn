@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
-import Products from "./Pages/Products";
+import Shop from "./Pages/Shop";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
@@ -24,7 +24,7 @@ class App extends Component {
         <NavbarComp />
 
         <Route path="/" exact component={Home} />
-        <Route path="/products" exact component={Products} />
+        <Route path="/products" exact component={Shop} />
         <Route path="/product/" component={Product} />
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />

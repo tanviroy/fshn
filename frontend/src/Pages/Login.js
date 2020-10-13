@@ -21,7 +21,10 @@ export default function Login() {
       },
       withCredentials: true,
       url: "http://localhost:5000/register",
-    }).then((res) => console.log(res));
+    }).then(function (res) {
+      console.log(res);
+      alert(res.data);
+    });
   };
 
   const login = () => {
@@ -33,7 +36,10 @@ export default function Login() {
       },
       withCredentials: true,
       url: "http://localhost:5000/login",
-    }).then((res) => console.log(res));
+    }).then(function (res) {
+      console.log(res);
+      alert(res.data);
+    });
   };
 
   const getUser = () => {

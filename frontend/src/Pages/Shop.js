@@ -1,9 +1,11 @@
+// This is the Shop Page / All Products Page - users can view, search for and filter products here.
+
 import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
 import ProductsComp from "../components/products";
 
-class Products extends Component {
+class Shop extends Component {
   state = {
     products: [],
   };
@@ -38,4 +40,4 @@ class Products extends Component {
   }
 }
 
-export default Products;
+export default Shop;

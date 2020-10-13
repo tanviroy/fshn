@@ -1,4 +1,4 @@
-// Carousel Component - "CarouselComp"
+// This is the Carousel Component for the Home Page - "CarouselComp"
 
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";

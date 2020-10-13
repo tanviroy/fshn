@@ -1,21 +1,20 @@
 // This is the Cart Page - will show products (if any) that are in the cart
 
-//<Container id="content">
-//<ProductsHorizontal products={this.state.user.cart} />
-//</Container>
+// <Container id="content">
+// <CartComp products={this.state.user.cart} />
+// </Container>
 
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-import ProductsHorizontal from "../components/products-horizontal";
+import CartComp from "../components/cart";
 import Axios from "axios";
 
 
 class Cart extends Component {
+
   state = {
     products: [],
   };
-
-
 
   componentDidMount() {
     Axios({
@@ -38,6 +37,7 @@ class Cart extends Component {
       url: "http://localhost:5000/movetowishlist",
     }).then((res) => {
       console.log(res);
+      alert(res.data);
     });
     //console.log(productId);
   }
@@ -52,6 +52,7 @@ class Cart extends Component {
       url: "http://localhost:5000/removefromcart",
     }).then((res) => {
       console.log(res);
+      alert(res.data);
     });
     //console.log(productId);
   }
@@ -65,7 +66,8 @@ class Cart extends Component {
       },
       url: "http://localhost:5000/buyproduct",
     }).then((res) => {
-      console.log(res);
+      console.log(res.data);
+      alert(res.data);
     });
     //console.log(productId);
   }
@@ -80,7 +82,7 @@ class Cart extends Component {
 
         <div className="container">
           <Container id="content">
-            <ProductsHorizontal products={this.state.products}
+            <CartComp products={this.state.products}
                                 moveToWishlist={this.moveToWishlist}
                                 removeFromCart={this.removeFromCart}
                                 buyProduct={this.buyProduct} />

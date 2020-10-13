@@ -20,14 +20,18 @@ CODEBASE
 /src:
 
 /components: (files begin in lowercase and components are have suffix "Comp" to them)
-/carousel.js: This is the Carousel Component - "CarouselComp"
-/footer.js: This is the Footer Component - "FooterComp"
-/navbar.js: This is the Navigation bar Component - "NavbarComp"
-/products.js: This is the Products Component - "ProductsComp" (blueprint code to dynamically serve product data)
-
+/carousel.js: This is the Carousel Component for the Home Page - "CarouselComp"
+/cart.js: This is the things that go on the Cart Page Component for the Cart Page - "CartComp"
+/footer.js: This is the Footer Component for all pages - "FooterComp"
+/navbar.js: This is the Navigation bar Component for all pages - "NavbarComp"
+/product.js: This is the single Product Component for the individual product pages - "ProductComp"
+/products.js: This is the "view all products" Products Component for the Shop Page - "ProductsComp" (blueprint code to dynamically serve product data)
+/searchbar.js: This is the Search bar Component for the Shop Page - "SearchComp"
 
 /Pages: (files begin in uppercase, each of these pages are also components (classes/functions))
 /Home.js: This is the Home Page - main page. Has a carousel landing and featured products.
+/Shop.js: This is the Shop Page / All Products Page - users can view, search for and filter products here.
+/Product.js: This is the individual Product Page - users can view details of each product and take actions here.
 /Cart.js: This is the Cart Page - will show products (if any) that are in the cart
 /Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
 /Profile.js: This is the Profile Page - users can view and update their information here.
