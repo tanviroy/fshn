@@ -1,4 +1,4 @@
-// Navigation bar Component - "NavbarComp"
+// This is the Navigation bar Component for all pages - "NavbarComp"
 
 import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
@@ -26,7 +26,7 @@ export default class NavbarComp extends Component {
           />
         </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
-          <Nav.Link href="/products">All Products</Nav.Link>
+          <Nav.Link href="/products">Shop</Nav.Link>
           <Nav.Link href="/cart">Cart</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>

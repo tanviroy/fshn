@@ -61,20 +61,21 @@ require("./passportConfig")(passport);
 app.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
-    if (!user) res.send("User doesn't exist");
+    if (!user) res.send("User does not exist!");
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.send("User authenticated");
+        res.send("Successfully logged in!");
         //console.log(req.user);
       });
     }
   })(req, res, next);
 });
+
 app.post("/register", (req, res) => {
   User.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
-    if (doc) res.send("User exists, please login");
+    if (doc) res.send("User already exists, please login");
     if (!doc) {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
@@ -84,7 +85,7 @@ app.post("/register", (req, res) => {
         password: hashedPassword,
       });
       await newUser.save();
-      res.send("New user created");
+      res.send("Welcome to FSHN!");
     }
   });
 });
@@ -111,22 +112,23 @@ app.post("/addproduct", (req, res) => {
 app.post("/update/number", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.mobile = req.body.mobile;
       await doc.save();
-      res.send("User mobile updated");
+      res.send("User mobile updated.");
     }
   });
 });
+
 app.post("/update/address", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.address = req.body.address;
       await doc.save();
-      res.send("User address updated");
+      res.send("User address updated.");
     }
   });
 });
@@ -136,29 +138,30 @@ app.post("/update/address", (req, res) => {
 app.post("/addtocart", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.cart.push(req.body.productId);
       await doc.save();
-      res.send("Product added to cart");
+      res.send("Product successfully added to cart!");
     }
   });
 });
+
 app.post("/removefromcart", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.cart.pull(req.body.productId);
       await doc.save();
-      res.send("Product removed from cart");
+      res.send("Product removed from cart.");
     }
   });
 });
 
 app.get("/getcartitems", (req, res) => {
   //const productId = req.params.id;
-  if (!req.user) console.log("Please log in to proceed")
+  if (!req.user) alert("Please log in to proceed!")
   if (req.user){
     Product.find({_id : {$in: req.user.cart}}, async (err, doc) =>{
       if (err) throw err;
@@ -173,7 +176,7 @@ app.get("/getcartitems", (req, res) => {
 app.post("/addtowishlist", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.wishlist.push(req.body.productId);
       await doc.save();
@@ -185,7 +188,7 @@ app.post("/addtowishlist", (req, res) => {
 app.post("/movetowishlist", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.wishlist.push(req.body.productId);
       doc.cart.pull(req.body.productId);
@@ -194,8 +197,9 @@ app.post("/movetowishlist", (req, res) => {
     }
   });
 });
+
 app.get("/getwishlistitems", (req, res) => {
-  if (!req.user) console.log("Please log in to proceed")
+  if (!req.user) alert("Please log in to proceed!")
   if (req.user){
     Product.find({_id : {$in: req.user.wishlist}}, async (err, doc) =>{
       if (err) throw err;
@@ -210,27 +214,27 @@ app.get("/getwishlistitems", (req, res) => {
 app.post("/buyproduct", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("User doesn't exist");
+    if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.orders.push(req.body.productId);
       doc.cart.pull(req.body.productId);
       await doc.save();
-      res.send("New order made");
+      res.send("New order made!");
     }
   });
   Product.findOne({ _id: req.body.productId}, async (err, doc) => {
     if (err) throw err;
-    if (!doc) res.send("Product doesn't exist");
+    if (!doc) res.send("Product does not exist!");
     if (doc) {
       doc.buyers.push(req.user._id);
       await doc.save();
-      res.send("New buyer added");
+      res.send("New buyer added!");
     }
   })
 });
 
 app.get("/getorderitems", (req, res) => {
-  if (!req.user) console.log("Please log in to proceed")
+  if (!req.user) console.alert("Please log in to proceed!")
   if (req.user){
     Product.find({_id : {$in: req.user.orders}}, async (err, doc) =>{
       if (err) throw err;
@@ -241,16 +245,8 @@ app.get("/getorderitems", (req, res) => {
     });
   }
 });
-// =================== End of main shopping ROUTES
 
-app.get("/user", (req, res) => {
-  res.send(req.user);
-  //console.log(req.user); // req.user stores the deserealized user that has been authenticated inside it
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+// =================== Some more product ROUTES
 
 app.get("/getproducts", (req, res) => {
   Product.find({}, async (err, doc) =>{
@@ -271,7 +267,17 @@ app.get("/getproductbyid/:id", (req, res) => {
   });
 });
 
+app.get("/user", (req, res) => {
+  res.send(req.user);
+  //console.log(req.user); // req.user stores the deserealized user that has been authenticated inside it
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 //========================================= SERVER STARTING
+
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);
 });

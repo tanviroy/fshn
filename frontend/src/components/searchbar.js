@@ -1,4 +1,4 @@
-// Navigation bar Component - "SearchComp"
+// This is the Search bar Component for the Shop Page - "SearchComp"
 
 import React, { Component, useState, useEffect } from "react";
 import "../App.css";

@@ -26,7 +26,6 @@ class Home extends Component {
     return (
       <div>
         <div className="banner">
-
           <CarouselComp />
         </div>
 
