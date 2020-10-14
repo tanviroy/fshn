@@ -77,7 +77,7 @@ class Cart extends Component {
       <div>
 
         <center>
-          <h1 style={{fontSize: "4rem"}}> This is the cart page</h1>
+          <h1 style={{fontSize: "4rem"}}> SHOPPING CART </h1>
         </center>
 
         <div className="container">

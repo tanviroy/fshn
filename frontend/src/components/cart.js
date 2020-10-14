@@ -3,6 +3,7 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
 const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
 
@@ -20,8 +21,8 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
   <div className="cart-list">
     <ul className="cart-list-container">
       <li>
-        <h3 className="shopping-cart">SHOPPING CART</h3>
-        <div className="shopping-cart">PRICE</div>
+        <h3 className="shopping-cart">CART ITEMS</h3>
+        <div className="shopping-cart">PRICE &nbsp; </div>
       </li>
 
       {products.length === 0 
@@ -29,22 +30,26 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct }) => {
         : products.map(product =>
           <li>
             <div className="cart-image"><img src={product.imageurl} alt="product" /></div>
-            <div className="cart-name">
-              <div><Link to={"/product/" + product._id}>{product.name}</Link></div>
-            </div>
-            <div className="cart-price">${product.price}</div>
-            <div className="cart-action">
-              <button onClick={() => moveToWishlist(product._id)}>Move to Wishlist</button>
-              <button onClick={() => removeFromCart(product._id)}>Remove from Cart</button>
-              <button onClick={() => buyProduct(product._id)}>Buy Now!</button>
-            </div>
+            <Container>
+              
+                <div className="cart-name">
+                  <div><Link to={"/product/" + product._id}>{product.name}</Link></div></div>
+                
+                <div className="cart-price">${product.price}</div>
+              
+              <Row>
+                <Col><button className="cart-button" onClick={() => moveToWishlist(product._id)}>Move to Wishlist</button></Col>
+                <Col><button className="cart-button" onClick={() => removeFromCart(product._id)}>Remove from Cart</button></Col>
+                <Col><button className="cart-button" onClick={() => buyProduct(product._id)}>Buy Now!</button></Col>
+              </Row>
+            </Container>
           </li>
           )}
     </ul>
   </div>
 
   <div className="cart-action">
-      <h2 style={{fontWeight: "bold"}}> Subtotal </h2>
+      <h1 style={{fontWeight: "bold"}}> Subtotal </h1> <br />
       <h3>Your cart has {`${products.length}`} items </h3>
       <h3>Your total bill is ${total} </h3>
   </div>
