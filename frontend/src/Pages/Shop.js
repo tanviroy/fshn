@@ -43,12 +43,13 @@ class Shop extends Component {
       <div>
 
         <center>
-          <div className = "container" style = {{paddingTop: '5vh'}}>
-            <input type = "text" value = {this.state.searchterm} onChange = {this.editSearchTerm} placeholder = "Search for a product..."/>
+          <div className = "search-bar">
+            <input type = "text" className="search" value = {this.state.searchterm} onChange = {this.editSearchTerm} placeholder = "Search for a product..." />
+            <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
           </div>
 
           <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
-          <h1 style={{fontSize: "4rem"}}> View Products</h1>
+          <h1 style={{fontSize: "3rem"}}> View Products</h1>
         </center>
 
         <div className="container">

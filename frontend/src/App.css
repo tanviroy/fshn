@@ -111,6 +111,34 @@ button:hover {
      2. Products Page
 *************************/
 
+.search-bar{
+  font-size: x-large;
+  z-index: 1;
+  position: relative;
+  padding: 0;
+  padding-top: 5vh;
+  margin: 0;
+  left: 30px;
+  background-position: center;
+}
+
+.search{
+  width: 65%;
+}
+
+.search:hover{
+  box-shadow: #000000;
+}
+
+.search-icon{
+  position: relative;
+  z-index: 1;
+  width: 65px;
+  height: 65px;
+  right: 60px;
+  top: -5px;
+}
+
 .products-container {
   margin-top: 5%;
   display: flex;
@@ -237,7 +265,7 @@ button:hover {
 
 .cart-list-container {
   list-style-type: none;
-  padding: 1rem;
+  padding: 3rem;
   font-size: large;
   line-height: 3rem;
 }
@@ -251,8 +279,8 @@ button:hover {
 }
 
 .cart-list-container li img {
-  max-width: 18rem;
-  max-height: 12rem;
+  width: 16rem;
+  height: 20rem;
   padding-right: 2rem;
 }
 
@@ -267,23 +295,22 @@ button:hover {
 }
 
 .cart-name {
-  flex: 8 1;
-  font-size: 2rem;
+  flex: auto;
+  width: auto;
+  font-size: 2.5rem;
 }
 
 .cart-price {
-  flex: 1 1;
+  flex: 10;
   font-size: larger;
   text-align: right;
 }
 
-.delete-from-cart-button {
-  padding: 0.5rem;
-  margin-left: 1rem;
-  border: 0.15rem #000000 solid;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background-color: #DE9D95;
+.cart-button{
+  display: inline;
+  font-size: medium;
+  width: 12rem;
+  height: 3rem;
 }
 
 /*************************
