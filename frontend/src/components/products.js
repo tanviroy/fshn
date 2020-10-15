@@ -26,7 +26,7 @@ const ProductsComp = ({ products }) => {
               </div>
               <div className="product-price">${product.price}</div>
               <div className="product-rating">
-                {product.rating} Stars ({product.reviews} Reviews)
+                {product.rating} Stars {/*({product.reviews[0]} Reviews)*/}
               </div>
             </div>
           </li>

@@ -111,7 +111,7 @@ button:hover {
      2. Products Page
 *************************/
 
-.search-bar{
+.search-bar {
   font-size: x-large;
   z-index: 1;
   position: relative;
@@ -122,15 +122,15 @@ button:hover {
   background-position: center;
 }
 
-.search{
+.search {
   width: 65%;
 }
 
-.search:hover{
+.search:hover {
   box-shadow: #000000;
 }
 
-.search-icon{
+.search-icon {
   position: relative;
   z-index: 1;
   width: 65px;
@@ -306,7 +306,7 @@ button:hover {
   text-align: right;
 }
 
-.cart-button{
+.cart-button {
   display: inline;
   font-size: medium;
   width: 12rem;
@@ -336,4 +336,3 @@ button:hover {
 /*************************
       7. Profile Page
 *************************/
-
