@@ -13,6 +13,7 @@ import Profile from "./Pages/Profile";
 import AddProduct from "./Pages/AddProduct";
 import TnC from "./Pages/T&C";
 import AboutUs from "./Pages/AboutUs";
+import Contact from "./Pages/Contact";
 
 import NavbarComp from "./components/navbar";
 import FooterComp from "./components/footer";
@@ -33,7 +34,7 @@ class App extends Component {
         <Route path="/addproduct" exact component={AddProduct} />
         <Route path="/terms-and-conditions" component={TnC} />
         <Route path="/about-us" component={AboutUs} />
-        <Route path="/contact-us" component={TnC} />
+        <Route path="/contact-us" component={Contact} />
 
         <FooterComp />
       </BrowserRouter>
