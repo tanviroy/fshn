@@ -107,6 +107,56 @@ button:hover {
   margin-top: 0px;
 }
 
+.swiper-container {
+  width: 100%;
+  height: 90%;
+}
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+ /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-general {
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1000px;
+}
+.container-general .gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+.container-general .gallery-wrap .item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: all 0.8s ease;
+}
+.container-general .gallery-wrap .item:hover {
+  flex: 4;
+}
+.wrap-effect-1 .item:first-of-type {
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/1_aftwak.jpg');
+}
+.wrap-effect-1 .item:nth-of-type(2) {
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/2_oumam3.jpg');
+}
+.wrap-effect-1 .item:nth-of-type(3) {
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/6_whg2sv.jpg');
+}
+.wrap-effect-1 .item:nth-of-type(4) {
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/8_tsvgx9.jpg');
+}
+.wrap-effect-1 .item:last-of-type {
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/9_ljwm0w.jpg');
+}
+
 /*************************
      2. Products Page
 *************************/

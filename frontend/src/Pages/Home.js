@@ -4,7 +4,6 @@
 import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
-//import { Link } from "react-router-dom";
 import ProductsComp from "../components/products";
 import CarouselComp from "../components/carousel";
 
@@ -39,6 +38,19 @@ class Home extends Component {
             <ProductsComp products={this.state.products} />
           </Container>
         </div>
+        
+        <div class="swiper-slide">
+          <div class="container-general">
+            <div class="gallery-wrap wrap-effect-1">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }
