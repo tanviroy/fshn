@@ -53,7 +53,7 @@ export default function AddProduct() {
       /><br/>
       <input
         placeholder="Enter rating"
-        onChange={(e) => setRating(e.target.value)}
+        onChange={(e) => setRating(e.target.value.split(" "))}
       /><br/>
 
       <button onClick={() => addItem()}>Add Product to DB</button>

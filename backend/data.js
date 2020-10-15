@@ -11,6 +11,9 @@
 // 8. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/8_tsvgx9.jpg
 // 9. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/9_ljwm0w.jpg
 //10. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/10_f1qbit.jpg
+//11. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/11_ttxpck.jpg
+//12. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/12_d5tquy.jpg
+
 
 export default {
     products: [{

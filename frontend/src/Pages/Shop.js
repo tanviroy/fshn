@@ -45,7 +45,7 @@ class Shop extends Component {
         <center>
           <div className = "search-bar">
             <input type = "text" className="search" value = {this.state.searchterm} onChange = {this.editSearchTerm} placeholder = "Search for a product..." />
-            <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
+            <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" alt="search"/>
           </div>
 
           <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
