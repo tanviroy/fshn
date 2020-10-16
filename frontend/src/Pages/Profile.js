@@ -41,8 +41,11 @@ class Profile extends Component{
       withCredentials: true,
       url: "http://localhost:5000/getcartitems",
     }).then((res) => {
-      this.setState({ cart: res.data});
+     
+        this.setState({ cart: res.data});
       //console.log(res.data);
+      
+      
     });
     Axios({
       method: "GET",
@@ -62,7 +65,13 @@ class Profile extends Component{
     });
   };
 
-
+  logout = () => {
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/logout",
+    });
+  }
 
   updateNum = () => {
     Axios({
@@ -155,6 +164,11 @@ class Profile extends Component{
             <ProfileItems products={this.state.orders} />
           </Container>
         </div>
+
+      <center>
+      <button onClick={this.logout}> Logout </button>
+      </center>
+
       </div>
     </div>
   );

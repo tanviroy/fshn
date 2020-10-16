@@ -72,6 +72,11 @@ app.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 app.post("/register", (req, res) => {
   User.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
@@ -161,7 +166,9 @@ app.post("/removefromcart", (req, res) => {
 
 app.get("/getcartitems", (req, res) => {
   //const productId = req.params.id;
-  if (!req.user) alert("Please log in to proceed!")
+  if (!req.user) {
+    res.send([]);
+    console.log("Please log in to proceed!")}
   if (req.user){
     Product.find({_id : {$in: req.user.cart}}, async (err, doc) =>{
       if (err) throw err;
@@ -217,7 +224,7 @@ app.post("/movetowishlist", (req, res) => {
 });
 
 app.get("/getwishlistitems", (req, res) => {
-  if (!req.user) alert("Please log in to proceed!")
+  if (!req.user) res.send([]);
   if (req.user){
     Product.find({_id : {$in: req.user.wishlist}}, async (err, doc) =>{
       if (err) throw err;
@@ -252,7 +259,7 @@ app.post("/buyproduct", (req, res) => {
 });
 
 app.get("/getorderitems", (req, res) => {
-  if (!req.user) console.alert("Please log in to proceed!")
+  if (!req.user) res.send([]);
   if (req.user){
     Product.find({_id : {$in: req.user.orders}}, async (err, doc) =>{
       if (err) throw err;
@@ -300,16 +307,76 @@ app.get("/getfeaturedproducts", (req, res) => {
 });
 app.get("/productsearch/:term", (req, res) => {
   const searchterm = req.params.term;
+  if (searchterm === ""){
+    Product.find({}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  else{
+    Product.find({$or: [{name : {$regex: searchterm, $options: 'i'}}, {category : {$regex: searchterm, $options: 'i'}}] }, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  
+});
+app.get("/productsearchbygender/:gender", (req, res) => {
+  const gender = req.params.gender;
 
-  Product.find({$or: [{name : {$regex: searchterm, $options: 'i'}}, {category : {$regex: searchterm, $options: 'i'}}] }, async (err, doc) =>{
-    if (err) throw err;
-    if (doc){
-      await res.send(doc);
-      //console.log(doc);
-    }
-  });
+  if (gender==="A"){
+    Product.find({}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+
+  }
+  else{
+    Product.find({gender: gender}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  
 });
 
+app.get("/productsearchbycolor/:color", (req, res) => {
+  const color = req.params.color;
+
+  
+  if (color==="A"){
+    Product.find({}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+
+  }
+  else{
+    Product.find({color: color}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  
+});
 app.get("/getproductbyid/:id", (req, res) => {
   const productId = req.params.id;
   Product.find({_id : productId}, async (err, doc) =>{

@@ -10,6 +10,8 @@ class Shop extends Component {
   state = {
     products: [],
     searchterm: '',
+    gender: "A",
+    color: "A",
   };
 
   editSearchTerm = async(e) => {
@@ -26,6 +28,34 @@ class Shop extends Component {
       console.log(res.data);
     });
 
+  }
+
+  handleGenderChange = async(e) =>{
+    await this.setState({gender: e.target.value});
+    //console.log(this.state.gender)
+    Axios({
+      method: "GET",
+      withCredentials: true,
+  
+      url: "http://localhost:5000/productsearchbygender/"+this.state.gender,
+    }).then((res) => {
+      this.setState({ products: res.data });
+      console.log(res.data);
+    });
+  }
+
+  handleColorChange = async(e) =>{
+    await this.setState({color: e.target.value});
+    //console.log(this.state.color)
+    Axios({
+      method: "GET",
+      withCredentials: true,
+  
+      url: "http://localhost:5000/productsearchbycolor/"+this.state.color,
+    }).then((res) => {
+      this.setState({ products: res.data });
+      console.log(res.data);
+    });
   }
 
   componentDidMount() {
@@ -50,6 +80,28 @@ class Shop extends Component {
 
           <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
           <h1 style={{fontSize: "3rem"}}> View Products</h1>
+
+          <label>
+          Gender: 
+          <select value={this.state.gender} onChange={this.handleGenderChange}>
+            <option value="A">All</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="U">Unisex</option>
+          </select>
+          </label>
+
+          <label>
+          Color: 
+          <select value={this.state.gender} onChange={this.handleColorChange}>
+            <option value="A">All</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Orange">Orange</option>
+            <option value="Grey">Grey</option>
+          </select>
+          </label>
+
         </center>
 
         <div className="container">
