@@ -7,6 +7,8 @@ import { Container } from "react-bootstrap";
 import ProfileItems from "../components/profileitems";
 import Axios from "axios";
 import {Link} from 'react-router-dom'
+import Image from 'react-bootstrap/Image'
+
 
 class Profile extends Component{
   state = {
@@ -112,7 +114,10 @@ class Profile extends Component{
 
   return (
     <div>
-      <h1>Welcome to your profile <b>{this.state.name}</b>!</h1>
+
+      <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847602/welcome_hhin5h.png" fluid /> 
+      <h1>Hi <b>{this.state.name}</b>!</h1>
+
       <div>
         <h3>Registered Mobile number: <b>{this.state.mobile}</b> Delivery Address: <b>{this.state.address}</b></h3>
         <br></br>
@@ -145,7 +150,9 @@ class Profile extends Component{
       </Modal>
   */}
         <div className="container">
-          <h1>MY CART</h1>
+
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847816/yourcart_hb4g2u.png" fluid /> 
+
 
           <div>
             <h2>Ooh so close! Want to <Link to="/cart">Checkout</Link>?</h2>
@@ -157,20 +164,25 @@ class Profile extends Component{
           </div>
         </div>
 
+
         <div className="container">
+
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847974/wishlist_x6cv29.png" fluid /> 
 
           <div>
             <Container id="content">
             <ProfileItems products={this.state.wishlist} />
           </Container>
           </div>
+
           <h2>MY WISHLIST</h2>
+
 
         </div>
 
 
         <div className="container">
-          <h2>PREVIOUS ORDERS</h2>
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602848155/previousorders_i2wtru.png" fluid /> 
           <Container id="content">
             <ProfileItems products={this.state.orders} />
           </Container>
