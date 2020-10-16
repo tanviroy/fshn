@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 //import ProductsComp from "../components/products";
 import ProfileItems from "../components/profileitems";
 import Axios from "axios";
+import {Link} from 'react-router-dom'
 
 class Profile extends Component{
   state = {
@@ -145,17 +146,28 @@ class Profile extends Component{
       </Modal>
   */}
         <div className="container">
-          <h2>MY CART</h2>
-          <Container id="content">
+          <h1>MY CART</h1>
+
+          <div>
+            <h2>Ooh so close! Want to <Link to="/cart">Checkout</Link>?</h2>
+            <h2> <div></div></h2> 
+
+            <Container id="content">
             <ProfileItems products={this.state.cart} />
           </Container>
+          </div>
         </div>
 
+
         <div className="container">
-          <h2>MY WISHLIST</h2>
-          <Container id="content">
+
+          <div>
+            <Container id="content">
             <ProfileItems products={this.state.wishlist} />
           </Container>
+          </div>
+          <h2>MY WISHLIST</h2>
+
         </div>
 
         <div className="container">
