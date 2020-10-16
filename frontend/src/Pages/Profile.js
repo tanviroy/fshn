@@ -175,9 +175,6 @@ class Profile extends Component{
           </Container>
           </div>
 
-          <h2>MY WISHLIST</h2>
-
-
         </div>
 
 

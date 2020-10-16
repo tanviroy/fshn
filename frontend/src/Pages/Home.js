@@ -51,11 +51,6 @@ class Home extends Component {
           <h1 style={{fontSize: "4rem"}}> Featured Collections</h1>
         </center>
 
-        <div>
-        <h1>Explore the FSHN Fall 2020 <Link to="/products">Workwear Collection</Link></h1> 
-        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602840916/workwear_campaign_kafr1o.png" fluid />
-        </div>
-
         <div className="container">
           <Container id="content">
             <ProductsComp products={this.state.products} />
