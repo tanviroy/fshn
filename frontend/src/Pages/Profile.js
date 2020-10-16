@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 //import ProductsComp from "../components/products";
 import ProfileItems from "../components/profileitems";
 import Axios from "axios";
+import {Link} from 'react-router-dom'
 
 class Profile extends Component{
   state = {
@@ -111,13 +112,12 @@ class Profile extends Component{
 
   return (
     <div>
-      <h1>User Profile</h1>
+      <h1>Welcome to your profile <b>{this.state.name}</b>!</h1>
       <div>
-        <h3>Hello, <b>{this.state.name}</b>!</h3>
-        <h3><b>Registerd Mobile number: </b>{this.state.mobile}</h3>
-        <h3><b>Delivery Address: </b>{this.state.address}</h3>
-        <input type="text" onChange={this.handleNumChange}/><button onClick={this.updateNum}> Update Mobile </button><br/>
-        <input type="text" onChange={this.handleAddChange}/><button onClick={this.updateAdd}> Update Address </button>
+        <h3>Registered Mobile number: <b>{this.state.mobile}</b> Delivery Address: <b>{this.state.address}</b></h3>
+        <br></br>
+        <h4> If you would like to update your number: <input type="text" onChange={this.handleNumChange}/> <button onClick={this.updateNum}> Update Mobile </button> </h4> 
+        <h4> If you would like to update your address: <input type="text" onChange={this.handleAddChange}/> <button onClick={this.updateAdd}> Update Address </button> </h4>
 {/*}
         <Button variant="primary" onClick={this.handleShow}>
         Update Delivery Address
@@ -145,18 +145,29 @@ class Profile extends Component{
       </Modal>
   */}
         <div className="container">
-          <h2>MY CART</h2>
-          <Container id="content">
+          <h1>MY CART</h1>
+
+          <div>
+            <h2>Ooh so close! Want to <Link to="/cart">Checkout</Link>?</h2>
+            <h2> <div></div></h2> 
+
+            <Container id="content">
             <ProfileItems products={this.state.cart} />
           </Container>
+          </div>
         </div>
 
         <div className="container">
-          <h2>MY WISHLIST</h2>
-          <Container id="content">
+
+          <div>
+            <Container id="content">
             <ProfileItems products={this.state.wishlist} />
           </Container>
+          </div>
+          <h2>MY WISHLIST</h2>
+
         </div>
+
 
         <div className="container">
           <h2>PREVIOUS ORDERS</h2>
