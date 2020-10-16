@@ -25,10 +25,10 @@ class AboutUs extends Component {
         We design our pieces through the multicultural experiences of our designers. We have a unique perspective on the modern, multidimensional generation and have won industry recognition for our CFDA/Vogue Fashion Challenges. We are exclusively debuting our Fall/Winter collection on Snapchat and Instagram this year. This is made possible through our direct-to-consumer model, which increases transparency, personalization, lowers pricing and promotes sustainability by increasing transportation efficiency and reducing waste. We celebrate our consumers who embrace individuality while contributing to the health and of the planet. 
         <br/><br/><br/>
 
-        <h2> <div><Link to="/products">Keep Browsing</Link></div></h2> 
+        <h2> <div></div></h2> 
 
         <br/><br/><br/>
-        <h2>We hope you enjoy FSHN</h2> 
+        <h2>We hope you enjoy FSHN... <Link to="/products">Discover More</Link></h2> 
 
         <br/><br/><br/>
 
