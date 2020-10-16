@@ -2,8 +2,6 @@
 
 import React, { Component } from "react";
 import "../App.css";
-import { Route, BrowserRouter } from "react-router-dom";
-import Shop from "../Pages/Shop";
 import {Link} from 'react-router-dom'
 
 class AboutUs extends Component {
