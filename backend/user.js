@@ -3,6 +3,7 @@
 const mongoose = require("mongoose");
 const user = new mongoose.Schema({
   username: String,
+  googleId: String,
   password: String,
   address: { type: String, default: "home" },
   mobile: Number,

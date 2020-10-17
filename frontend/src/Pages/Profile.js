@@ -44,10 +44,10 @@ class Profile extends Component{
       withCredentials: true,
       url: "http://localhost:5000/getcartitems",
     }).then((res) => {
-     
+      if (res.data !== "Please log in to proceed!"){
         this.setState({ cart: res.data});
-      //console.log(res.data);
-      
+      }
+    
       
     });
     Axios({
@@ -55,16 +55,19 @@ class Profile extends Component{
       withCredentials: true,
       url: "http://localhost:5000/getwishlistitems",
     }).then((res) => {
+      if (res.data !== "Please log in to proceed!"){
       this.setState({ wishlist: res.data});
-      //console.log(res.data);
+      }
     });
+
     Axios({
       method: "GET",
       withCredentials: true,
       url: "http://localhost:5000/getorderitems",
     }).then((res) => {
+      if (res.data !== "Please log in to proceed!"){
       this.setState({ orders: res.data});
-      //console.log(res.data);
+      }
     });
   };
 
@@ -73,8 +76,11 @@ class Profile extends Component{
       method: "GET",
       withCredentials: true,
       url: "http://localhost:5000/logout",
+    }).then((res) => {
+      alert("You are logged out!");
+      //console.log(res.data);
     });
-  }
+  };
 
   updateNum = () => {
     Axios({
