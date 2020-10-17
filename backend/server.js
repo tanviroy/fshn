@@ -58,6 +58,16 @@ require("./passportConfig")(passport);
 
 //========================================= ROUTES
 
+app.get('/google',
+  passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('http://localhost:3000/profile');
+  });
+
 app.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
@@ -167,7 +177,7 @@ app.post("/removefromcart", (req, res) => {
 app.get("/getcartitems", (req, res) => {
   //const productId = req.params.id;
   if (!req.user) {
-    res.send([]);
+    res.send("Please log in to proceed!");
     console.log("Please log in to proceed!")}
   if (req.user){
     Product.find({_id : {$in: req.user.cart}}, async (err, doc) =>{

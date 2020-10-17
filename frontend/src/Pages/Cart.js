@@ -22,8 +22,16 @@ class Cart extends Component {
       withCredentials: true,
       url: "http://localhost:5000/getcartitems",
     }).then((res) => {
-      this.setState({ products: res.data });
-      console.log(res.data);
+
+      if (res.data === "Please log in to proceed!"){
+        alert("Please log in to proceed!");
+      }
+
+      else{
+        this.setState({ products: res.data });
+        console.log(res.data);
+      }
+      
     });
   }
 
@@ -71,6 +79,7 @@ class Cart extends Component {
     });
     //console.log(productId);
   }
+
 
   render() {
     return (

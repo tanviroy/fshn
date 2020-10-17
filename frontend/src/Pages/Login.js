@@ -28,6 +28,7 @@ export default function Login() {
   };
 
   const login = () => {
+
     Axios({
       method: "POST",
       data: {
@@ -39,7 +40,12 @@ export default function Login() {
     }).then(function (res) {
       console.log(res);
       alert(res.data);
+      
     });
+  };
+
+  const googleAuth = () => {
+    window.open("http://localhost:5000/google");
   };
 
   
@@ -80,7 +86,8 @@ export default function Login() {
           onChange={(e) => setLoginPassword(e.target.value)}
         />
         <br />
-        <button onClick={login}>Continue</button>
+        <button onClick={login}>Continue</button><br/>
+        <button onClick={googleAuth}>Sign In with Google</button>
       </div>
       <br /><br />
 
