@@ -23,7 +23,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <div style={{width: "100%"}}>
         <NavbarComp />
+      </div>
 
         <Route path="/" exact component={Home} />
         <Route path="/products" exact component={Shop} />

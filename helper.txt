@@ -26,16 +26,19 @@ CODEBASE
 /navbar.js: This is the Navigation bar Component for all pages - "NavbarComp"
 /product.js: This is the single Product Component for the individual product pages - "ProductComp"
 /products.js: This is the "view all products" Products Component for the Shop Page - "ProductsComp" (blueprint code to dynamically serve product data)
-/searchbar.js: This is the Search bar Component for the Shop Page - "SearchComp"
+/profileitems.js: This is the component that is used for products in cart, wishlist and past orders on Profile Page - "ProfileComp"
+/reviews.js: This is the Reviews Component used to render product reviews on that individual product's page - "ReviewsComp"
 
 /Pages: (files begin in uppercase, each of these pages are also components (classes/functions))
+/AboutUs.js: This is the About Us Page.
+/Cart.js: This is the Cart Page - will show products (if any) that are in the cart.
+/Contact.js: This is the Contact Us Page.
 /Home.js: This is the Home Page - main page. Has a carousel landing and featured products.
-/Shop.js: This is the Shop Page / All Products Page - users can view, search for and filter products here.
-/Product.js: This is the individual Product Page - users can view details of each product and take actions here.
-/Cart.js: This is the Cart Page - will show products (if any) that are in the cart
 /Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
+/Product.js: This is the individual Product Page - users can view details of each product and take actions here.
 /Profile.js: This is the Profile Page - users can view and update their information here.
-/T&C.js: This is the Terms and Conditions Page 
+/Shop.js: This is the Shop Page / All Products Page - users can view, search for and filter products here.
+/T&C.js: This is the Terms and Conditions Page.
 
 
 /App.js: This is the main file containing the core of the application. It holds major routes and renders pages (Home, Cart, SignUp, Profile) as components. 

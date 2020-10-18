@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Axios from "axios"; // for making http requests
+import GoogleButton from "react-google-button";
 
 export default function Login() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -87,7 +88,11 @@ export default function Login() {
         />
         <br />
         <button onClick={login}>Continue</button><br/>
-        <button onClick={googleAuth}>Sign In with Google</button>
+
+        <center>
+          <GoogleButton onClick={googleAuth}/>
+        </center>
+
       </div>
       <br /><br />
 

@@ -15,6 +15,9 @@ export default class NavbarComp extends Component {
           paddingLeft: "0%",
           height: "65px",
           fontSize: "2rem",
+          width: "100%",
+          overflowX: "hidden",
+          overflowY: "hidden",
         }}
         fixed="top"
       >
