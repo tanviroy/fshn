@@ -1,42 +1,35 @@
-// This is the things that go on the Cart Page Component - "CartComp"
+// This is the component that is used for products in cart, wishlist and past orders on Profile Page - "ProfileComp"
 
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
-const ProfileItems = ({ products}) => {
+const ProfileComp = ({ products}) => {
 
 
   return (
   <div>
 
-<div className="cart">
-
-  <div className="cart-list">
-    <ul className="cart-list-container">
+    <ul className="profile-list-container">
       
       {products.length === 0 
-        ? <div> Cart is empty </div> // Checks if cart is empty else displays cart
+        ? <div> This is empty </div>
         : products.map(product =>
-          <li key={product._id}>
-            <div className="cart-image"><img src={product.imageurl} alt="product" /></div>
+          <li key={product._id} style={{width: "100%"}}>
+            <div><img src={product.imageurl} alt="product" style={{display: "flex",height: "15rem"}}/></div>
             <Container>
-              
-                <div className="cart-name">
-                  <div><Link to={"/product/" + product._id}>{product.name}</Link></div></div>
-               
-              
-              
+                <div>
+                  <div><Link to={"/product/" + product._id}>{product.name}</Link></div>
+                  <div><b>${product.price}</b></div>
+                </div>
             </Container>
           </li>
           )}
     </ul>
-  </div>
 
-</div>
 </div>
   );
 };
 
-export default ProfileItems
+export default ProfileComp

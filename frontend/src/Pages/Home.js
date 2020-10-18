@@ -30,8 +30,21 @@ class Home extends Component {
           <CarouselComp />
         </div>
 
+        <h1 style={{marginTop: "5%", fontSize: "6rem"}}>Welcome to <span style={{color: "#edca0d", fontWeight: "bold"}}>FSHN</span></h1>
+        <h1 style={{marginTop: "2%", fontSize: "2.7rem"}}>FSHN (pronounced <b>fashion</b>) stands for "Fashionable, Sustainable, Haute & Nouveau" <br />
+        We strive to make quality design available to everyone in an affordable and sustainable way. <br /> </h1>
+        
+        <Link to="/products">
+        <button class="btn">
+          <span style={{color: "#edca0d", fontSize: "3rem"}}>SHOP NOW</span>
+          <div class="spiral-top"></div>
+          <div class="spiral-bottom"></div>
+        </button>
+        </Link>
+
         <div class="swiper-slide">
           <div class="container-general">
+          <h1 style={{fontSize: "8rem", margin: "0", color: "#edca0d", top: "275px", position: "relative", zIndex: "1", width: "100%"}}> every(wear) </h1><br />
             <div class="gallery-wrap wrap-effect-1">
               <div class="item"></div>
               <div class="item"></div>
@@ -43,15 +56,14 @@ class Home extends Component {
         </div>
 
         <div>
-        <Link to="/products"> <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602842544/workwear_campaign_2_ruhv1l.png" fluid /> </Link> 
+          <Link to="/products"> <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602842544/workwear_campaign_2_ruhv1l.png" fluid /> </Link> 
         </div>
 
         <center>
-          <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
-          <h1 style={{fontSize: "4rem"}}> Featured Collections</h1>
+          <h1 style={{fontSize: "5rem", marginTop: "5%"}}> # Get The Look </h1>
         </center>
 
-        <div className="container">
+        <div className="container" style={{marginBottom: "5%"}}>
           <Container id="content">
             <ProductsComp products={this.state.products} />
           </Container>

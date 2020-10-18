@@ -18,14 +18,17 @@ html {
 body {
   background-color: #ffffff;
   font-family: "fonty";
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .heading {
@@ -67,6 +70,7 @@ a:hover {
   height: 17%;
   width: 100%;
   font-size: large;
+  margin-top: 5%;
 }
 
 .wrapper {
@@ -98,6 +102,11 @@ button:hover {
   color: #edca0d;
 }
 
+label {
+  padding: 3%;
+  font-size: large;
+}
+
 /*************************
       1. Home Page
 *************************/
@@ -107,11 +116,89 @@ button:hover {
   margin-top: 0px;
 }
 
+.btn {
+  background: #000000;
+  width: 200px;
+  height: 75px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.btn:focus {
+  border: none;
+  box-shadow: none;
+  background: #000000;
+}
+
+.btn:hover {
+  background: #000000;
+}
+
+.spiral-top::before,
+.spiral-top::after,
+.spiral-bottom::before,
+.spiral-bottom::after {
+  content: " ";
+  background: #edca0d;
+  position: absolute;
+  -webkit-box-shadow: 0 0 10px 0 #edca0d;
+  box-shadow: 0 0 10px 0 #edca0d;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.spiral-top::before {
+  top: 0px;
+  left: 0px;
+  width: 5px;
+  height: 0px;
+}
+.spiral-top::after {
+  top: 0px;
+  right: 0px;
+  width: 0px;
+  height: 5px;
+}
+.spiral-bottom::before {
+  bottom: 0px;
+  left: 0px;
+  width: 0px;
+  height: 5px;
+}
+.spiral-bottom::after {
+  bottom: 0px;
+  right: 0px;
+  width: 5px;
+  height: 0px;
+}
+
+.btn:hover
+.spiral-top::before {
+  height: 75px;
+}
+.btn:hover
+.spiral-top::after {
+  width: 200px;
+}
+.btn:hover
+.spiral-bottom::before {
+  width: 200px;
+}
+.btn:hover
+.spiral-bottom::after {
+  height: 75px;
+}
+
 .swiper-container {
   width: 100%;
   height: 90%;
 }
 .swiper-slide {
+  margin-top: 0%;
   text-align: center;
   background: #fff;
  /* Center slide text vertically */
@@ -121,8 +208,11 @@ button:hover {
 }
 .container-general {
   padding: 75px 0;
+  padding-top: 0%;
   margin: 0 auto;
-  width: 1000px;
+  margin-top: -2%;
+  margin-bottom: 2%;
+  width: 90%;
 }
 .container-general .gallery-wrap {
   display: flex;
@@ -137,9 +227,11 @@ button:hover {
   background-size: cover;
   background-repeat: none;
   transition: all 0.8s ease;
+  filter: grayscale(100%);
 }
 .container-general .gallery-wrap .item:hover {
   flex: 4;
+  filter: grayscale(0%);
 }
 .wrap-effect-1 .item:first-of-type {
   background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/1_aftwak.jpg');
@@ -278,6 +370,50 @@ button:hover {
   height: 80%;
 }
 
+
+.review-list-container {
+  list-style-type: none;
+  padding: 2%;
+  font-size: large;
+  line-height: 3rem;
+  background-color: white;
+  width: 50%;
+}
+
+.review-list-container li {
+  display: flex;
+  padding: 2%;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.review {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+textarea {
+  width: 100%;
+}
+
+.review-btn {
+  background-color: black;
+  color: white; 
+  font-size: 2rem;
+  border: none;
+}
+
+.review-btn:hover {
+  background-color: black;
+  color: #edca0d;
+}
+
 /*************************
       4. Cart Page
 *************************/
@@ -386,3 +522,38 @@ button:hover {
 /*************************
       7. Profile Page
 *************************/
+
+.profile-list-container {
+  list-style-type: none;
+  padding: 3rem;
+  font-size: large;
+  line-height: 3rem;
+  background-color: white;
+}
+
+.profile-list-container li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border: 2.5px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.profile-list-container li img {
+  width: 16rem;
+  height: 20rem;
+  padding-right: 2rem;
+  margin-top: 5%;
+  margin-left: 5%;
+  position: relative;
+}
+
+.user-info{
+  border: 2px; 
+  margin-top: 0%;
+  margin-bottom: 5%;
+  padding: 3%;
+  width: 60%; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

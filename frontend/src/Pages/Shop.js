@@ -78,11 +78,10 @@ class Shop extends Component {
             <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" alt="search"/>
           </div>
 
-          <h1 style={{fontSize: "5rem"}}> . . . </h1><br />
-          <h1 style={{fontSize: "3rem"}}> View Products</h1>
+          <h1 style={{fontSize: "3rem", marginTop: "3%"}}> View Products</h1>
 
           <label>
-          Gender: 
+          Gender: &nbsp;
           <select value={this.state.gender} onChange={this.handleGenderChange}>
             <option value="A">All</option>
             <option value="M">Male</option>
@@ -92,7 +91,7 @@ class Shop extends Component {
           </label>
 
           <label>
-          Color: 
+          Color: &nbsp;
           <select value={this.state.gender} onChange={this.handleColorChange}>
             <option value="A">All</option>
             <option value="Black">Black</option>
@@ -104,7 +103,7 @@ class Shop extends Component {
 
         </center>
 
-        <div className="container">
+        <div className="container" style={{marginBottom: "5%"}}>
           <Container id="content">
             <ProductsComp products={this.state.products} />
           </Container>

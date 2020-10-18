@@ -1,4 +1,4 @@
-// This is the Terms and Conditions Page 
+// This is the About Us Page
 
 import React, { Component } from "react";
 import "../App.css";

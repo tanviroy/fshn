@@ -2,9 +2,8 @@
 
 import React, { Component } from "react";
 import "../App.css";
-import { Container } from "react-bootstrap";
-//import ProductsComp from "../components/products";
-import ProfileItems from "../components/profileitems";
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileComp from "../components/profileitems";
 import Axios from "axios";
 import {Link} from 'react-router-dom'
 import Image from 'react-bootstrap/Image'
@@ -36,9 +35,9 @@ class Profile extends Component{
         this.setState({ mobile: res.data.mobile,
           name: res.data.username,
           address: res.data.address});
-      }
-      
+      }  
     });
+
     Axios({
       method: "GET",
       withCredentials: true,
@@ -47,9 +46,8 @@ class Profile extends Component{
       if (res.data !== "Please log in to proceed!"){
         this.setState({ cart: res.data});
       }
-    
-      
     });
+
     Axios({
       method: "GET",
       withCredentials: true,
@@ -104,8 +102,6 @@ class Profile extends Component{
     }).then((res) => console.log(res));
   };
 
-  //handleShow = () => {this.state.modal=true;
-  //handleClose = () => this.state.modal=false;
   handleNumChange = async(e) => {
     await this.setState({newmobile: e.target.value});
     //console.log(this.state.newmobile)
@@ -122,80 +118,56 @@ class Profile extends Component{
     <div>
 
       <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847602/welcome_hhin5h.png" fluid /> 
-      <h1>Hi <b>{this.state.name}</b>!</h1>
+     
+      <h1 style={{fontSize: "3rem", marginTop: "3%"}}><b>Hello&nbsp;{this.state.name}</b></h1>
+      <h2>Great to see you! Here's your personal FSHN dashboard, <br />
+      where you can update your personal details and view the items in your cart, wishlist, and previous orders.</h2>
 
-      <div>
-        <h3>Registered Mobile number: <b>{this.state.mobile}</b> Delivery Address: <b>{this.state.address}</b></h3>
-        <br></br>
-        <h4> If you would like to update your number: <input type="text" onChange={this.handleNumChange}/> <button onClick={this.updateNum}> Update Mobile </button> </h4> 
+      <center>
+        <button style={{maxWidth: "10rem", padding: "0%", marginTop: "2%"}} onClick={this.logout}> Logout </button>
+      </center>
+      
+      <center>
+      <div className="user-info">
+        <h1 style={{fontSize: "2.5rem"}}>Your Information</h1><br />
+        <h3><b>Registered Mobile number:</b>  {this.state.mobile}<br />
+        <b>Delivery Address:</b> {this.state.address}</h3>
+
+        <h4 style={{height: "4rem"}}> If you would like to update your number: <input type="text" onChange={this.handleNumChange}/> <button onClick={this.updateNum}> Update Mobile </button> </h4> 
         <h4> If you would like to update your address: <input type="text" onChange={this.handleAddChange}/> <button onClick={this.updateAdd}> Update Address </button> </h4>
-{/*}
-        <Button variant="primary" onClick={this.handleShow}>
-        Update Delivery Address
-        </Button>
+      </div>
+      </center>
 
-        <Modal
-        show={true}
-        onHide={this.handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={this.handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Understood</Button>
-        </Modal.Footer>
-      </Modal>
-  */}
-        <div className="container">
-
+    <Container>
+      <Row>
+        <Col xs={12} md={8}>
         <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847816/yourcart_hb4g2u.png" fluid /> 
 
-
           <div>
-            <h2>Ooh so close! Want to <Link to="/cart">Checkout</Link>?</h2>
+            <h2 style={{marginTop: "5%"}}>You're almost there! Want to <Link to="/cart">Checkout</Link>?</h2>
             <h2> <div></div></h2> 
 
-            <Container id="content">
-            <ProfileItems products={this.state.cart} />
-          </Container>
+            <ProfileComp products={this.state.cart} />
           </div>
-        </div>
+        </Col>
 
-
-        <div className="container">
-
+        <Col xs={6} md={4}>
         <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602847974/wishlist_x6cv29.png" fluid /> 
 
           <div>
             <Container id="content">
-            <ProfileItems products={this.state.wishlist} />
-          </Container>
+                <ProfileComp products={this.state.wishlist} />
+            </Container>
           </div>
+        </Col>
 
-        </div>
+      </Row>
+    </Container>
 
-
-        <div className="container">
         <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1602848155/previousorders_i2wtru.png" fluid /> 
-          <Container id="content">
-            <ProfileItems products={this.state.orders} />
-          </Container>
-        </div>
+            <ProfileComp products={this.state.orders} />
 
-      <center>
-      <button onClick={this.logout}> Logout </button>
-      </center>
 
-      </div>
     </div>
   );
 }

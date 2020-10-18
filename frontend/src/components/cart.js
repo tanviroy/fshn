@@ -51,7 +51,7 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct}) => {
   <div className="cart-action">
       <h1 style={{fontWeight: "bold"}}> Subtotal </h1> <br />
       <h3>Your cart has {`${products.length}`} {products.length === 1 ? 'item' : 'items'} </h3>
-      <h3>Your total bill is ${total} </h3>
+      <h3>Your total bill is ${total.toFixed(2)} </h3>
   </div>
 
 </div>

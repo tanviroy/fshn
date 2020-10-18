@@ -1,4 +1,4 @@
-// This is the Terms and Conditions Page 
+// This is the Contact Us Page
 
 import React, { Component } from "react";
 import "../App.css";
@@ -35,7 +35,6 @@ class Contact extends Component {
         <br/><br/><br/>
 
         <h2>We hope you enjoy FSHN</h2> 
-
 
         </p>
       </div>

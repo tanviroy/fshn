@@ -11,7 +11,7 @@ class Product extends Component {
 
     state = {
       products: [],
-      newreview: "Add your review here...",
+      newreview: "",
     };
 
     componentDidMount() {
@@ -111,26 +111,29 @@ class Product extends Component {
               </li> 
             ))}
             </Container>
-            <div> <h1>Product Reviews</h1>
 
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                <textarea value={this.state.newreview} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-
-            <Container id="content">
-              <ReviewsComp products={this.state.products} />
-            </Container>
-              
             </div>
           </div>
 
-        </div>
+          <div style={{marginTop: "3%", width: "100%", padding: "0%"}}>
+            <h1>Product Reviews</h1>
+              <center>
+                <ReviewsComp products={this.state.products} />
+              </center>
+
+            <h1 style={{marginTop: "3%"}}>Want to review this product?</h1>
+            <form onSubmit={this.handleSubmit}>
+              <label style={{width: "50%"}}>
+                <textarea value={this.state.newreview} onChange={this.handleChange} placeholder="Add your review here!" />
+                <input className="review-btn" type="submit" value="Submit" />
+              </label>
+            </form>
+
+          </div>
+
       </div>
       );
     }
   }
    
-  export default Product;
+export default Product;
