@@ -232,7 +232,7 @@ app.post("/addtocart", (req, res) => {
           if (doc.wishers.includes(req.user._id)){
             await res.send("Product already exists in your wishlist!");
           }
-          else if(doc.orders.includes(req.user._id)){
+          else if(doc.buyers.includes(req.user._id)){
             res.send("Product already purchased once!");
           }
           else if(req.user.cart.includes(req.body.productId)){
@@ -318,7 +318,7 @@ app.post("/addtowishlist", (req, res) => {
           if (doc.wishers.includes(req.user._id)){
             await res.send("Product already exists in your wishlist!");
           }
-          else if(doc.orders.includes(req.user._id)){
+          else if(doc.buyers.includes(req.user._id)){
             res.send("Product already purchased once!");
           }
           else{
