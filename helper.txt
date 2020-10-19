@@ -28,6 +28,7 @@ CODEBASE
 /products.js: This is the "view all products" Products Component for the Shop Page - "ProductsComp" (blueprint code to dynamically serve product data)
 /profileitems.js: This is the component that is used for products in cart, wishlist and past orders on Profile Page - "ProfileComp"
 /reviews.js: This is the Reviews Component used to render product reviews on that individual product's page - "ReviewsComp"
+/wishlist.js: This is the Wishlist Comp on the Cart Page - "WishComp"
 
 /Pages: (files begin in uppercase, each of these pages are also components (classes/functions))
 /AboutUs.js: This is the About Us Page.

@@ -34,7 +34,7 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct, buyAll
               
                 <div className="cart-name">
                   <div><Link to={"/product/" + product._id}>{product.name}</Link></div></div>
-                
+
                 <div className="cart-price">${product.price}</div>
               
               <Row>
