@@ -10,9 +10,7 @@
 
 * This project is created using MERN stack applications, javascript, css, and HTML.
 
-## System Design
-
-### Technology stack
+### Specifications
 
 ![](readme-md/2.png)
 
