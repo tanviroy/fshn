@@ -12,7 +12,7 @@
 
 ### Specifications
 
-![](readme-md/2.png)
+![](readme-md/techstack.png)
 
 <br/>
 <table>
