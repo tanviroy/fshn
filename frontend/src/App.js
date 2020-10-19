@@ -11,6 +11,7 @@ import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import AddProduct from "./Pages/AddProduct";
+import ChangePrice from "./Pages/ChangePrice";
 import TnC from "./Pages/T&C";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
@@ -34,6 +35,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/addproduct" exact component={AddProduct} />
+        <Route path="/changeprice" exact component={ChangePrice} />
         <Route path="/terms-and-conditions" component={TnC} />
         <Route path="/about-us" component={AboutUs} />
         <Route path="/contact-us" component={Contact} />

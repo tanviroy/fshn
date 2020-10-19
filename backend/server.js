@@ -14,12 +14,15 @@ const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
 const expressSession = require("express-session");
 const bodyParser = require("body-parser");
+const nodemailer = require('nodemailer');
+
 
 const app = express();
 const PORT = 5000;
 
 const User = require("./user");
 const Product = require("./product");
+const user = require("./user");
 
 //========================================= MONGODB CONNECT
 
@@ -56,10 +59,27 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
 
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'fshn.customer.service@gmail.com',
+    pass: 'thisisFSHN123!@#'
+  }
+});
+
+const mailOptions = {
+  from: 'fshn.customer.service@gmail.com',
+  to: 'soham.de_ug22@ashoka.edu.in',
+  subject: 'Sending Email using Node.js',
+  text: 'You added something to cart. That was easy!'
+};
+
+
 //========================================= ROUTES
 
 app.get('/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+  passport.authenticate('google', { scope: ['profile','email'] }));
 
 app.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
@@ -97,6 +117,7 @@ app.post("/register", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         mobile: req.body.mobile,
+        email: req.body.email,
         password: hashedPassword,
       });
       await newUser.save();
@@ -120,6 +141,47 @@ app.post("/addproduct", (req, res) => {
       newProduct.save();
       res.send("New product added");
     
+});
+
+app.post("/changeprice", (req, res) => {
+  
+  Product.findOne({_id: req.body.productId}, async(err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+
+      let wishers = doc.wishers;
+      for(var i = 0; i < wishers.length; i++){
+        User.findOne({_id:wishers[i]}, (err,user) => {
+          if (err) throw err;
+          if(user){
+
+              const changeEmail = {
+              from: 'fshn.customer.service@gmail.com',
+              to: user.email,
+              subject: 'FSHN: Some item(s) in your wishlist have changed prices',
+              text: 'An item in your wishlist has recently changed price.'
+            };
+          
+            transporter.sendMail(changeEmail, function(error, info){
+              if (error) {
+                console.log(error);
+              } else {
+                console.log('Email sent: ' + info.response);
+              }
+            });
+
+          }
+        })
+      }
+
+      doc.price = req.body.newprice
+      await doc.save();
+      res.send("Product updated");
+    }
+  })
+  
+
 });
 
 // =================== Update User Details ROUTES:
@@ -151,15 +213,70 @@ app.post("/update/address", (req, res) => {
 // =================== Main shopping (Cart/ Wishlist/ Buy) ROUTES:
 
 app.post("/addtocart", (req, res) => {
+  //transporter.sendMail(mailOptions, function(error, info){
+  //  if (error) {
+  //    console.log(error);
+  //  } else {
+  //    console.log('Email sent: ' + info.response);
+  //  }
+  //});
+
+  if (!req.user){
+    res.send("Please login first!")
+  }
+  else{
+
+    Product.findOne({_id: req.body.productId}, async (err,doc) => {
+      if (err) throw err;
+      if (doc){
+          if (doc.wishers.includes(req.user._id)){
+            await res.send("Product already exists in your wishlist!");
+          }
+          else if(doc.orders.includes(req.user._id)){
+            res.send("Product already purchased once!");
+          }
+          else if(req.user.cart.includes(req.body.productId)){
+            res.send("Product already exists in your cart!");
+          }
+          else{
+            User.findOne({ username: req.user.username }, async (err, doc) => {
+              if (err) throw err;
+              if (!doc) res.send("User does not exist!");
+              if (doc) {
+                doc.cart.push(req.body.productId);
+                await doc.save();
+                res.send("Product successfully added to cart!");
+              }
+            });
+          }
+        }
+
+    })
+    
+  }
+  
+});
+
+app.post("/movetocart", (req, res) => {
   User.findOne({ username: req.user.username }, async (err, doc) => {
     if (err) throw err;
     if (!doc) res.send("User does not exist!");
     if (doc) {
       doc.cart.push(req.body.productId);
+      doc.wishlist.pull(req.body.productId);
       await doc.save();
-      res.send("Product successfully added to cart!");
+      res.send("Product moved from wishlist to cart");
     }
   });
+  Product.findOne({ _id: req.body.productId}, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("Product does not exist!");
+    if (doc) {
+      doc.wishers.pull(req.user._id);
+      await doc.save();
+      res.send("Product moved to cart!");
+    }
+  })
 });
 
 app.post("/removefromcart", (req, res) => {
@@ -191,24 +308,45 @@ app.get("/getcartitems", (req, res) => {
 });
 
 app.post("/addtowishlist", (req, res) => {
-  User.findOne({ username: req.user.username }, async (err, doc) => {
-    if (err) throw err;
-    if (!doc) res.send("User does not exist!");
-    if (doc) {
-      doc.wishlist.push(req.body.productId);
-      await doc.save();
-      res.send("Product added to wishlist");
-    }
-  });
-  Product.findOne({ _id: req.body.productId}, async (err, doc) => {
-    if (err) throw err;
-    if (!doc) res.send("Product does not exist!");
-    if (doc) {
-      doc.wishers.push(req.user._id);
-      await doc.save();
-      res.send("New wishlist-er added!");
-    }
-  })
+  if(!req.user){
+    res.send("Please login first");
+  }
+  else{
+    Product.findOne({_id: req.body.productId}, async (err,doc) => {
+      if (err) throw err;
+      if (doc){
+          if (doc.wishers.includes(req.user._id)){
+            await res.send("Product already exists in your wishlist!");
+          }
+          else if(doc.orders.includes(req.user._id)){
+            res.send("Product already purchased once!");
+          }
+          else{
+            User.findOne({ username: req.user.username }, async (err, doc) => {
+              if (err) throw err;
+              if (!doc) res.send("User does not exist!");
+              if (doc) {
+                doc.wishlist.push(req.body.productId);
+                await doc.save();
+                res.send("Product added to wishlist");
+              }
+            });
+            Product.findOne({ _id: req.body.productId}, async (err, doc) => {
+              if (err) throw err;
+              if (!doc) res.send("Product does not exist!");
+              if (doc) {
+                doc.wishers.push(req.user._id);
+                await doc.save();
+                res.send("New wishlist-er added!");
+              }
+            });
+          }
+        
+      }
+    })
+    
+  }
+  
 });
 
 app.post("/movetowishlist", (req, res) => {
@@ -233,8 +371,32 @@ app.post("/movetowishlist", (req, res) => {
   })
 });
 
+app.post("/removefromwishlist", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+      doc.wishlist.pull(req.body.productId);
+      await doc.save();
+      res.send("Product removed from wishlist.");
+    }
+  });
+
+  Product.findOne({ _id: req.body.productId}, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("Product does not exist!");
+    if (doc) {
+      doc.wishers.pull(req.user._id);
+      await doc.save();
+      res.send("A wishlist-er was removed");
+    }
+  })
+});
+
 app.get("/getwishlistitems", (req, res) => {
-  if (!req.user) res.send([]);
+  if (!req.user) {
+    res.send("Please log in to proceed!");
+    console.log("Please log in to proceed!")}
   if (req.user){
     Product.find({_id : {$in: req.user.wishlist}}, async (err, doc) =>{
       if (err) throw err;
@@ -266,6 +428,55 @@ app.post("/buyproduct", (req, res) => {
       res.send("New buyer added!");
     }
   })
+
+  const purchaseEmail = {
+    from: 'fshn.customer.service@gmail.com',
+    to: req.user.email,
+    subject: 'FSHN: Congratulations on your new purchase!',
+    text: 'Congratulations on your purchase. Your purchased item in on the way'
+  };
+
+  transporter.sendMail(purchaseEmail, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
+
+});
+
+app.post("/buyallproducts", (req, res) => {
+  User.findOne({ username: req.user.username }, async (err, user) => {
+    if (err) throw err;
+    if (!user) res.send("User does not exist!");
+    if (user) {
+
+      let products = req.user.cart;
+      for(var i=0; i<products.length; i++){
+
+        user.orders.push(products[i]);
+        user.cart.pull(products[i]);
+        
+
+        Product.findOne({ _id: products[i]}, async (err, doc) => {
+          if (err) throw err;
+          if (!doc) res.send("Product does not exist!");
+          if (doc) {
+            doc.buyers.push(req.user._id);
+            await doc.save();
+            res.send("New buyer added!");
+          }
+        });
+
+      }
+
+      await user.save();
+      res.send("New orders made!");
+      
+    }
+  });
 });
 
 app.get("/getorderitems", (req, res) => {
@@ -283,18 +494,35 @@ app.get("/getorderitems", (req, res) => {
 
 app.post("/addreview", (req, res) => {
 
-  Product.findOne({ _id: req.body.productId}, async (err, doc) => {
-    if (err) throw err;
-    if (!doc) res.send("Product does not exist!");
-    if (!req.user) res.send("Login to continue");
-    if (doc && req.user) {
-      var newreview = {body: req.body.review, user: req.user.username};
-      doc.reviews.push(newreview);
-      await doc.save();
-      console.log(newreview)
-      res.send("New review added!");
-    }
-  })
+  if(!req.user){
+    res.send("Please login first!");
+  }
+  else{
+    Product.findOne({ _id: req.body.productId}, async (err, doc) => {
+      if (err) throw err;
+      if (!doc) res.send("Product does not exist!");
+      if (!req.user) res.send("Login to continue");
+      if (doc && req.user) {
+        if (req.user.orders.includes(req.body.productId)){
+          var newreview = {body: req.body.review, user: req.user.username, verified: "Y"};
+          doc.reviews.push(newreview);
+          await doc.save();
+          console.log(newreview)
+          res.send("New verified review added!");
+        }
+        else{
+          var newreview = {body: req.body.review, user: req.user.username, verified: "N"};
+          doc.reviews.push(newreview);
+          await doc.save();
+          console.log(newreview)
+          res.send("New review added!");
+        }
+        
+      }
+    })
+  }
+
+  
 });
 
 // =================== Some more product ROUTES

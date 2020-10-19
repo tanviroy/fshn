@@ -6,6 +6,8 @@ export default function AddProduct() {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [url, setUrl] = useState("");
+  const [color, setColor] = useState("");
+  const [gender, setGender] = useState("");
   const [price, setPrice] = useState("");
   const [rating, setRating] = useState("");
   const [category, setCategory] = useState("");
@@ -19,7 +21,9 @@ export default function AddProduct() {
         imageurl: url,
         category: category,
         price: price,
-        rating: rating
+        rating: rating,
+        color: color,
+        gender: gender,
 
       },
       withCredentials: true,
@@ -29,7 +33,7 @@ export default function AddProduct() {
 
   return (
     <div className="cart">
-      <h1>Add new products here</h1>
+      <h1>Add new products here</h1><br/>
 
       <input
         placeholder="Product name"
@@ -44,8 +48,12 @@ export default function AddProduct() {
         onChange={(e) => setCategory(e.target.value.split(" "))}
       /><br/>
       <input
-        placeholder="Enter image URL"
-        onChange={(e) => setUrl(e.target.value)}
+        placeholder="Enter color"
+        onChange={(e) => setColor(e.target.value)}
+      /><br/>
+      <input
+        placeholder="Enter gender"
+        onChange={(e) => setGender(e.target.value)}
       /><br/>
       <input
         placeholder="Enter price"
@@ -54,6 +62,10 @@ export default function AddProduct() {
       <input
         placeholder="Enter rating"
         onChange={(e) => setRating(e.target.value.split(" "))}
+      /><br/>
+      <input
+        placeholder="Enter image URL"
+        onChange={(e) => setUrl(e.target.value)}
       /><br/>
 
       <button onClick={() => addItem()}>Add Product to DB</button>

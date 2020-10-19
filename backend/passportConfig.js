@@ -37,7 +37,7 @@ module.exports = function (passport) {
       if (!user) {
         const newUser = new User({
           googleId: profile.id,
-          username: profile.displayName
+          username: profile.displayName,
         });
         await newUser.save();
         return cb(err, user);;
@@ -60,6 +60,7 @@ module.exports = function (passport) {
         orders: user.orders,
         cart: user.cart,
         wishlist: user.wishlist,
+        email: user.email,
       };
       cb(err, userInformation);
     });
