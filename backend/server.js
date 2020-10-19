@@ -122,6 +122,41 @@ app.post("/register", (req, res) => {
       });
       await newUser.save();
       res.send("Welcome to FSHN!");
+
+      const welcomeEmail = {
+        from: 'fshn.customer.service@gmail.com',
+        to: req.body.email,
+        subject: 'Welcome to FSHN! ✨',
+        html: `
+        <body style="font-family: Arial, Helvetica, sans-serif">
+        <center>
+        <img src="https://res.cloudinary.com/dl6m7txan/image/upload/v1602013956/3_rlqeb0.png" style="width: 100%;" >
+        <h1 style="background-color: black; color: #edca0d;">Welcome to FSHN!</h1>
+        <br>
+        <b>Hello, ${req.body.username}!</b> We're so excited to have you on board! <br><br>
+        <span style="color: #edca0d; font-weight: 600"> FSHN </span> (pronounced <i>fashion</i>) stands for <b>"Fashionable, Sustainable, Haute & Nouveau."</b>
+        We strive to make quality design available to everyone in an affordable and sustainable way.<br><br>     
+        Based in New York, FSHN is an international fashion brand, offering the latest styles and inspiration for all — always.
+        Customers will find everything from fashion pieces and unique designer collaborations to affordable wardrobe essentials, complete-the-look accessories, and motivational workout wear.
+        All seasons, all styles, all welcome! But FSHN is more than just apparel.
+        With price, quality and sustainability deeply rooted in its DNA, FSHN is not only a possibility for everyone to explore their personal style, but it also offers a chance to create a more sustainable fashion future.<br><br>
+        <b>Be sure to look out for:</b><br>
+        ⭐ Our monthly free giveaways! If you made a purchase with us of over $50 (USD) you directly qualify for that month's giveaway where we gift select random customers some of the hottest outfits of the season!<br>
+        ⭐ Our half-yearly sales that take place every summer and winter. Get the best clothes at the best prices!<br>
+        ⭐ Our exciting emails that glam up your inbox and might help inspire your next look.<br>
+        <br><br>
+        <img src="https://res.cloudinary.com/dfymeww45/image/upload/v1603122141/welcome.jpg" style="width: 100%">
+        <h1><b>Experience <span style="color: #edca0d;">FSHN.</span></b></h1>
+      </body>`
+      };
+    
+      transporter.sendMail(welcomeEmail, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
     }
   });
 });
@@ -428,23 +463,6 @@ app.post("/buyproduct", (req, res) => {
       res.send("New buyer added!");
     }
   })
-
-  const purchaseEmail = {
-    from: 'fshn.customer.service@gmail.com',
-    to: req.user.email,
-    subject: 'FSHN: Congratulations on your new purchase!',
-    text: 'Congratulations on your purchase. Your purchased item in on the way'
-  };
-
-  transporter.sendMail(purchaseEmail, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-
-
 });
 
 app.post("/buyallproducts", (req, res) => {
@@ -458,7 +476,6 @@ app.post("/buyallproducts", (req, res) => {
 
         user.orders.push(products[i]);
         user.cart.pull(products[i]);
-        
 
         Product.findOne({ _id: products[i]}, async (err, doc) => {
           if (err) throw err;

@@ -64,6 +64,7 @@ class Cart extends Component {
       url: "http://localhost:5000/movetowishlist",
     }).then((res) => {
       console.log(res);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
@@ -79,6 +80,7 @@ class Cart extends Component {
       url: "http://localhost:5000/removefromcart",
     }).then((res) => {
       console.log(res);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
@@ -94,6 +96,7 @@ class Cart extends Component {
       url: "http://localhost:5000/removefromwishlist",
     }).then((res) => {
       console.log(res);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
@@ -109,6 +112,7 @@ class Cart extends Component {
       url: "http://localhost:5000/movetocart",
     }).then((res) => {
       console.log(res);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
@@ -124,6 +128,7 @@ class Cart extends Component {
       url: "http://localhost:5000/buyproduct",
     }).then((res) => {
       console.log(res.data);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
@@ -136,11 +141,11 @@ class Cart extends Component {
       url: "http://localhost:5000/buyallproducts",
     }).then((res) => {
       console.log(res.data);
+      window.location.reload(false);
       alert(res.data);
     });
     //console.log(productId);
   }
-
 
   render() {
     return (
@@ -159,6 +164,7 @@ class Cart extends Component {
                                 buyAllProducts={this.buyAllProducts} />
           </Container>
         </div>
+
         <div className="container">
           <Container id="content">
             <WishComp products={this.state.wishlist}

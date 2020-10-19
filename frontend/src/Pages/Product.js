@@ -46,6 +46,7 @@ class Product extends Component {
         url: "http://localhost:5000/addreview",
       }).then(function (res) {
         console.log(res);
+        window.location.reload(false);
         alert(res.data);
       });
 
