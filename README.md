@@ -52,7 +52,7 @@
 
 ##### Authentication
 
-![](readme-md/login.png)
+![](readme-md/authentication.png)
 
 ##### Profile - User
 
