@@ -5,14 +5,9 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
-const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct, buyAllProducts}) => {
+const WishComp = ({ products, moveToCart, removeFromWishlist}) => {
 
-  let total = 0;
-
-  for (var i=0; i < products.length; i++) {
-    total = total + products[i].price;
-  }
-
+  
   return (
   <div>
 
@@ -21,7 +16,7 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct, buyAll
   <div className="cart-list">
     <ul className="cart-list-container">
       <li>
-        <h3 className="shopping-cart">CART ITEMS</h3>
+        <h3 className="shopping-cart">WISHLIST ITEMS</h3>
         <div className="shopping-cart">PRICE &nbsp; </div>
       </li>
 
@@ -38,9 +33,8 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct, buyAll
                 <div className="cart-price">${product.price}</div>
               
               <Row>
-                <Col><button className="cart-button" onClick={() => moveToWishlist(product._id)}>Move to Wishlist</button></Col>
-                <Col><button className="cart-button" onClick={() => removeFromCart(product._id)}>Remove from Cart</button></Col>
-                <Col><button className="cart-button" onClick={() => buyProduct(product._id)}>Buy Now!</button></Col>
+                <Col><button className="cart-button" onClick={() => moveToCart(product._id)}>Move to Cart</button></Col>
+                <Col><button className="cart-button" onClick={() => removeFromWishlist(product._id)}>Remove</button></Col>
               </Row>
             </Container>
           </li>
@@ -48,16 +42,11 @@ const CartComp = ({ products, moveToWishlist, removeFromCart, buyProduct, buyAll
     </ul>
   </div>
 
-  <div className="cart-action">
-      <h1 style={{fontWeight: "bold"}}> Subtotal </h1> <br />
-      <h3>Your cart has {`${products.length}`} {products.length === 1 ? 'item' : 'items'} </h3>
-      <h3>Your total bill is ${total.toFixed(2)} </h3>
-      <button onClick={() => buyAllProducts()}>Buy All</button>
-  </div>
+  
 
 </div>
 </div>
   );
 };
 
-export default CartComp
+export default WishComp

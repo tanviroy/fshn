@@ -11,7 +11,7 @@ const product = new mongoose.Schema({
   imageurl: String,
   price: Number,
   rating: [{ type: Number }],
-  reviews: [{ body: String, user: String }],
+  reviews: [{ body: String, user: String, verified: String }],
   buyers: [{ type: String }],
   wishers: [{ type: String }],
 });

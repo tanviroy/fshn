@@ -13,6 +13,41 @@
 //10. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/10_f1qbit.jpg
 //11. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/11_ttxpck.jpg
 //12. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/12_d5tquy.jpg
+//13. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/13_hcwo15.jpg
+//14. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/14_u15dwb.jpg
+//15. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/15_rczfii.jpg
+//16. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/16_ze62ls.jpg
+//17. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/17_fnyy6g.jpg
+//18. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/18_hp9fxk.jpg
+//19. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/19_gkuoho.jpg
+//20. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/20_fymsoy.jpg
+//21. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/21_ggjtxx.jpg
+//22. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/22_eqn5my.jpg
+//23. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/23_hjnwlg.jpg
+//24. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/24_vqdokj.jpg
+//25. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/25_wpueju.jpg
+//26. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/26_yo5brl.jpg
+//27. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429777/27_htd76r.jpg
+//28. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/28_s7dorp.jpg
+//29. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/29_oggmyp.jpg
+//30. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/30_lfhthy.jpg
+//31. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/31_qcxs71.jpg
+//32. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/32_hicluk.jpg
+//33. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/33_vmld8t.jpg
+//34. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/34_gscx2d.jpg
+//35. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/35_slvnr4.jpg
+//36. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/36_yjcrs5.jpg
+//37. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429778/37_mlmrla.jpg
+//38. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429779/38_rjx7fm.jpg
+//39. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429779/39_fe4guo.jpg
+//40. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429779/40_tesktd.jpg
+//41. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429779/41_zoo1yo.jpg
+//42. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429779/42_n52e3e.jpg
+//43. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/43_ejjayj.jpg
+//44. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/44_jsg0de.jpg
+//45. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/45_vk1xoj.jpg
+//46. https://res.cloudinary.com/dl6m7txan/image/upload/v1603043492/mondal_shirt_sfw_v44nfm.jpg
+
 
 
 export default {

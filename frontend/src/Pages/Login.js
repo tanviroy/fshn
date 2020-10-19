@@ -8,6 +8,7 @@ export default function Login() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerMobile, setRegisterMobile] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -19,6 +20,7 @@ export default function Login() {
         username: registerUsername,
         password: registerPassword,
         mobile: registerMobile,
+        email: registerEmail,
       },
       withCredentials: true,
       url: "http://localhost:5000/register",
@@ -62,6 +64,11 @@ export default function Login() {
         <input
           placeholder="Mobile Number"
           onChange={(e) => setRegisterMobile(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Email ID"
+          onChange={(e) => setRegisterEmail(e.target.value)}
         />
         <br />
         <input

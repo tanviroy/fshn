@@ -15,10 +15,7 @@ export default class CarouselComp extends Component {
             alt="First slide"
             style={{ height: "20%" }}
           />
-          <Carousel.Caption>
-            <h3>Explore the latest range of apparels for everyone</h3>
-            <p>&emsp; &emsp; &emsp;</p>
-          </Carousel.Caption>
+          
         </Carousel.Item>
 
         <Carousel.Item>
@@ -28,10 +25,7 @@ export default class CarouselComp extends Component {
             alt="Second slide"
             style={{ height: "20%" }}
           />
-          <Carousel.Caption>
-            <h3>Urban fashion at affordable rates</h3>
-            <p>&emsp; &emsp; &emsp;</p>
-          </Carousel.Caption>
+          
         </Carousel.Item>
 
         <Carousel.Item>
@@ -41,10 +35,7 @@ export default class CarouselComp extends Component {
             alt="Third slide"
             style={{ height: "20%" }}
           />
-          <Carousel.Caption>
-            <h3>Original Style. Responsibly Made.</h3>
-            <p>&emsp; &emsp; &emsp;</p>
-          </Carousel.Caption>
+          
         </Carousel.Item>
       </Carousel>
     );
