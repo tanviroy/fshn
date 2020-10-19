@@ -14,7 +14,7 @@
 
 ### Technology stack
 
-![](readme-src/2.png)
+![](readme-md/2.png)
 
 <br/>
 <table>
@@ -52,20 +52,19 @@
 
 ##### Authentication
 
-![](readme-src/login.png)
+![](readme-md/login.png)
 
 ##### Profile - User
 
-![](readme-src/profile.png)
+![](readme-md/profile.png)
 
 ##### Profile - Orders
 
-![](readme-src/orders.png)
+![](readme-md/orders.png)
 
 ##### Database - Search, Filter, Products
 
-![](readme-src/search,filter,database.png
-)
+![](readme-md/search,filter,database.png)
 
 ## Team Members
 Ruthu Soham Tanvi
