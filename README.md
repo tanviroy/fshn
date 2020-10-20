@@ -6,7 +6,7 @@
 ## Quick Start
 Open up a CLI, and execute the following commands:
 ```
-$ git clone https://github.com/tanviroy/ap-project1.git
+$ git clone https://github.com/tanviroy/fshn.git
 $ cd ap-project1
 
 $ npm install
