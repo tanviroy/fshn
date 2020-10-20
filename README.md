@@ -7,7 +7,7 @@
 Open up a CLI, and execute the following commands:
 ```
 $ git clone https://github.com/tanviroy/fshn.git
-$ cd ap-project1
+$ cd fshn
 
 $ npm install
 $ npm start
