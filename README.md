@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/61850850/96558584-87c57500-12d9-11eb-9edc-3b9b07e843e2.png)
+![logo](https://user-images.githubusercontent.com/61850850/96576215-79825380-12ef-11eb-9843-6bb4146b766f.png)
 
 # FSHN - an E-Commerce Platform for apparel
 > Project 1 for [CS-1202] Advanced Programming. This is a MERN stack e-commerce (clothing store) website. 
@@ -51,9 +51,9 @@ This project was built using the MERN stack of technologies.
 	</tr>
 </tbody>
 </table>
-<br/>
 
 ### Database
+
 <table>
 <thead>
 <tr>
@@ -91,7 +91,6 @@ This project was built using the MERN stack of technologies.
 	
 </tbody>
 </table>
-<br/>
 
 ### Codebase Structure 
 ```
