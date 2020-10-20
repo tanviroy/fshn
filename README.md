@@ -104,7 +104,6 @@ This project was built using the MERN stack of technologies.
 │   └── user.js
 ├── frontend/
 │   ├── public/
-│   │   └── imgs/
 │   └── src/
 │       ├── components/
 │       ├── Pages/
