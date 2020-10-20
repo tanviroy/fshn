@@ -143,5 +143,5 @@ Logo design and concept banners can be viewed [here](https://www.canva.com/desig
 ### User Profile - Update Info, View User Insights
 
 ## Citations
-Nearly all of the project code was written by us ourselves. We used documentation code for React BootStrap, Express, and Passportjs where needed. 
+Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, and Passportjs where needed. 
 * [Vertical Column Image Expansion CSS snippet](https://codepen.io/januaryofmine/pen/VRgEvV)
