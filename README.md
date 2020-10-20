@@ -1,18 +1,28 @@
-![](readme-md/logo.png)
+![logo](https://user-images.githubusercontent.com/61850850/96558584-87c57500-12d9-11eb-9edc-3b9b07e843e2.png)
 
+# FSHN - an E-Commerce Platform for apparel
+> Project 1 for [CS-1202] Advanced Programming. This is a MERN stack e-commerce (clothing store) website. 
 
+## Quick Start
+Open up a CLI, and execute the following commands:
+```
+$ git clone https://github.com/tanviroy/ap-project1.git
+$ cd ap-project1
 
-# Fashion E-Commerce Website
+$ npm install
+$ npm start
 
-> Team project for Advanced Programming course. This is an e-commerce fashion website, FSHN stands for Fashionable, Sustainable, Haute & Nouveau. 
+$ cd frontend
+$ npm install
+$ npm start
+```
+This should get your server to run at localhost:5000 and frontend to run at localhost:3000
 
-## Tech Stack
+## Project Details
+This project was built using the MERN stack of technologies.
 
-* This project is created using MERN stack applications, javascript, css, and HTML.
-
-### Specifications
-
-![](readme-md/techstack.png)
+### Major Technologies Used
+![techstack](https://user-images.githubusercontent.com/61850850/96565848-8482b700-12e2-11eb-8e6c-3e0f04c98289.png)
 
 <br/>
 <table>
@@ -44,8 +54,6 @@
 <br/>
 
 ### Database
-
-<br/>
 <table>
 <thead>
 <tr>
@@ -56,69 +64,85 @@
 <tbody>
 	<tr>
 		<td>Users</td>
-		<td>username: String,
-  		googleId: String,
-  		email: String,
-  		password: String,
-  		address: { type: String, default: "home" },
-  		mobile: Number,
-  		orders: [{ type: String }],
-  		cart: [{ type: String }],
-  		wishlist: [{ type: String }],</td>
+		<td>username: String,<br/>
+  		googleId: String,<br/>
+  		email: String,<br/>
+  		password: String,<br/>
+  		address: { type: String, default: "home" },<br/>
+  		mobile: Number,<br/>
+  		orders: [{ type: String }],<br/>
+  		cart: [{ type: String }],<br/>
+  		wishlist: [{ type: String }],</td><br/>
 	</tr>
 	<tr>
 		<td>Products</td>
-		<td>name: String,
-  		description: String,
- 		category: [{ type: String }],
- 		color: [{type: String}],
- 		gender: [{type: String}],
-  		imageurl: String,
-  		price: Number,
- 		rating: [{ type: Number }],
-  		reviews: [{ body: String, user: String, verified: String }],
-  		buyers: [{ type: String }],
-  		wishers: [{ type: String }],</td>
+		<td>name: String,<br/>
+  		description: String,<br/>
+ 		category: [{ type: String }],<br/>
+ 		color: [{type: String}],<br/>
+ 		gender: [{type: String}],<br/>
+  		imageurl: String,<br/>
+  		price: Number,<br/>
+ 		rating: [{ type: Number }],<br/>
+  		reviews: [{ body: String, user: String, verified: String }],<br/>
+  		buyers: [{ type: String }],<br/>
+  		wishers: [{ type: String }],</td><br/>
 	</tr>
 	
 </tbody>
 </table>
 <br/>
 
-## Quick Start
-
-Open up a CLI, and execute the following commands:
-
+### Codebase Structure 
 ```
-$ git clone https://github.com/tanviroy/ap-project1.git
-$ cd ap-project1
-
-$ npm install
-$ npm start
-
-$ cd frontend
-$ npm install
-$ npm start
+.
+├── backend/
+│   ├── data.js
+│   ├── passportConfig.js
+│   ├── product.js
+│   ├── server.js
+│   └── user.js
+├── frontend/
+│   ├── public/
+│   │   └── imgs/
+│   └── src/
+│       ├── components/
+│       ├── Pages/
+│       ├── App.css
+│       ├── App.js
+│       ├── font.ttf
+│       ├── index.css
+│       └── index.js
+├── .babelrc
+├── .gitignore
+├── helper.txt
+├── package-lock.json
+├── package.json
+└── README.md
 ```
-This should get your server to run in localhost:5000 and frontend to run in localhost:3000
 
-## Screenshots
+### Code Documentation
+For a more detailed documentation of our code and the complete list of project dependencies see [Helper.txt](helper.txt).
 
-##### Authentication
+### Design
+Logo design and concept banners can be viewed [here](https://www.canva.com/design/DAEJ2_HNt70/EwHMzzYoWlaoPhGUtJx-Dw/view?utm_content=DAEJ2_HNt70&utm_campaign=designshare&utm_medium=link&utm_source=publishpresent)
 
-![](readme-md/authentication.png)
+## Demo
+<Insert Demo GIF files here>
 
-##### Profile - User
+### Home Page
 
-![](readme-md/profile.png)
+### Shop - Search, Filter, Products
 
-##### Profile - Orders
+### Product Page - Details and Reviews 
 
-![](readme-md/orders.png)
+### Login Page - Register, Login with FSHN account or Google OAuth
 
-##### Database - Search, Filter, Products
+### Cart Page - Add/Remove to Cart
 
-![](readme-md/search,filter,database.png)
+### User Profile - Update Info, View User Insights
 
 ## Team Members
-Ruthu Soham Tanvi
+Ruthu Rooparaghunath
+Soham De
+Tanvi Roy 
