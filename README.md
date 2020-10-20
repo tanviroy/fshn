@@ -145,3 +145,4 @@ Logo design and concept banners can be viewed [here](https://www.canva.com/desig
 ## Citations
 Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, and Passportjs where needed. 
 * [Vertical Column Image Expansion CSS snippet](https://codepen.io/januaryofmine/pen/VRgEvV)
+* All our products have been taken from [H&M](https://www2.hm.com/en_us/index.html) and we were greatly inspired by their features and minimal design.
