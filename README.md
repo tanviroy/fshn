@@ -120,7 +120,6 @@ This project was built using the MERN stack of technologies.
 ├── package.json
 └── README.md
 ```
-<br/>
 
 ### Code Documentation
 For a more detailed documentation of our code and the complete list of project dependencies see [Helper.txt](helper.txt).
@@ -143,7 +142,6 @@ Logo design and concept banners can be viewed [here](https://www.canva.com/desig
 
 ### User Profile - Update Info, View User Insights
 
-## Team Members
-* Ruthu Rooparaghunath
-* Soham De
-* Tanvi Roy 
+## Citations
+Nearly all of the project code was written by us ourselves. We used documentation code for React BootStrap, Express, and Passportjs where needed. 
+* [Vertical Column Image Expansion CSS snippet](https://codepen.io/januaryofmine/pen/VRgEvV)
