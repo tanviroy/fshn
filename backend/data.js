@@ -1,6 +1,6 @@
-// This is the master file of all product data. Products are stored as objects.
-// Data from here served to API http://localhost:4000/api/products
-// Products are currently being served from this file but will shift to a database later. 
+// This is a file of all product data just for our purposes. Products are stored as objects. 
+// Products are now being served to the API from MongoDB Atlas.
+
 // 1. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/1_aftwak.jpg
 // 2. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/2_oumam3.jpg
 // 3. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429759/3_nhmz6u.jpg
@@ -47,7 +47,6 @@
 //44. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/44_jsg0de.jpg
 //45. https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/45_vk1xoj.jpg
 //46. https://res.cloudinary.com/dl6m7txan/image/upload/v1603043492/mondal_shirt_sfw_v44nfm.jpg
-
 
 
 export default {

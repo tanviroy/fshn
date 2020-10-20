@@ -1,5 +1,5 @@
 {
-  "name": "ap-project-1",
+  "name": "fshn",
   "version": "1.0.0",
   "description": "This is AP Project 1",
   "main": "index.js",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tanviroy/ap-project1.git"
+    "url": "git+https://github.com/tanviroy/fshn.git"
   },
   "keywords": [
     "MERN"
@@ -36,7 +36,7 @@
   "author": "Tanvi Roy, Soham De, Ruthu Rooparaghunath",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tanviroy/ap-project1/issues"
+    "url": "https://github.com/tanviroy/fshn/issues"
   },
-  "homepage": "https://github.com/tanviroy/ap-project1#readme"
+  "homepage": "https://github.com/tanviroy/fshn#readme"
 }

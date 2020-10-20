@@ -1,4 +1,4 @@
-// This is a Mongoose schema (model) for a user
+// This is a Mongoose schema (model) for a user.
 
 const mongoose = require("mongoose");
 const user = new mongoose.Schema({

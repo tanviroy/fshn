@@ -1,4 +1,4 @@
-// This is the Login Page - user can login through email ID or Google OAuth
+// This is the Signup and Login Page - user can login through email ID or Google OAuth
 
 import React, { useState } from "react";
 import Axios from "axios"; // for making http requests

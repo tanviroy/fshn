@@ -1,21 +1,64 @@
-This is a helper file that will help us understand the codebase of the project. This is being dynamically updated by Tanvi.
+This is a helper file that will help us understand the codebase of the project. This is being updated by Tanvi.
 
 HOW TO RUN THE APP
-1. Clone the master branch of the repository by "git clone https://github.com/tanviroy/ap-project1.git"
-2. Then enter "npm install" in the root directory (/ap-project1) and in the frontend directory (/ap-project1/frontend) to install all dependencies
-3. Open the entire project in an IDE (VSCode is great). Open a terminal and in the root directory (/ap-project1) run "npm start" to start the backend server.
-4. Open another terminal in the frontend directory (/frontend) and run "npm start" to start React.
+1. Clone the master branch of the repository in your CLI by "git clone https://github.com/tanviroy/fshn.git"
+2. Then enter "npm install" in the root directory (/fshn) and in the frontend directory (/fshn/frontend) to install all dependencies.
+3. Open the entire project in an IDE (VSCode is great). Open a terminal and in the root directory (/fshn) run "npm start" to start the backend server at localhost:5000.
+4. Open another terminal in the frontend directory (/frontend) and run "npm start" to start the React App which will be served at at localhost:3000.
 
 CODEBASE
+
+.
+├── backend/
+│   ├── data.js
+│   ├── passportConfig.js
+│   ├── product.js
+│   ├── server.js
+│   └── user.js
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       │   ├── carousel.js
+│       │   ├── cart.js
+│       │   ├── footer.js
+│       │   ├── navbar.js
+│       │   ├── product.js
+│       │   ├── products.js
+│       │   ├── profileitems.js
+│       │   ├── reviews.js
+│       │   └── wishlist.js
+│       ├── Pages/
+│       │   ├── AboutUs.js
+│       │   ├── Cart.js
+│       │   ├── Contact.js
+│       │   ├── Home.js
+│       │   ├── Login.js
+│       │   ├── Product.js
+│       │   ├── Profile.js
+│       │   ├── Shop.js
+│       │   └── T&C.js
+│       ├── App.css
+│       ├── App.js
+│       ├── font.ttf
+│       ├── index.css
+│       └── index.js
+├── .babelrc
+├── .gitignore
+├── helper.txt <---YOU ARE HERE--->
+├── package-lock.json
+├── package.json
+└── README.md
+
 /BACKEND 
-/data.js: This is the master file of all product data. Products are stored as objects. Data from here served to API http://localhost:4000/api/products. Products are currently being served from this file but will shift to a database later.
-/passportConfig.js: This is where authentication strategies for passport js are confugured. Currently, only supports local authentication, O-Auth to be added.
+/data.js: This is a file of all product data just for our purposes. Products are stored as objects. Products are now being served to the API from MongoDB Atlas.
+/passportConfig.js: This is where authentication strategies for passport js are confugured. Supports local and Google authentication.
+/product.js: This is a Mongoose schema (model) for a product.
 /server.js: This is the entry point for the backend (aka the index.js file). All backend dependencies are connected here. Mongoose is connected, RESTful routes defined. 
-/user.js: This is a Mongoose schema (model) for a user. Currently only has username and password
+/user.js: This is a Mongoose schema (model) for a user.
 
 /FRONTEND
 /public: (Do not remove any of the default files in this directory.)
-/imgs: All product images
 
 /src:
 
@@ -30,15 +73,15 @@ CODEBASE
 /reviews.js: This is the Reviews Component used to render product reviews on that individual product's page - "ReviewsComp"
 /wishlist.js: This is the Wishlist Comp on the Cart Page - "WishComp"
 
-/Pages: (files begin in uppercase, each of these pages are also components (classes/functions))
+/Pages: (files begin in uppercase, each of these pages are also components)
 /AboutUs.js: This is the About Us Page.
-/Cart.js: This is the Cart Page - will show products (if any) that are in the cart.
+/Cart.js: This is the Cart Page - will show products (if any) that are in the cart and wishlist.
 /Contact.js: This is the Contact Us Page.
-/Home.js: This is the Home Page - main page. Has a carousel landing and featured products.
-/Login.js: This is the Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
+/Home.js: This is the Home Page - main page. Has a carousel landing, catchy banners, and featured products.
+/Login.js: This is the Signup and Login Page - user can login through email ID or Google OAuth. Currently supports local authentication, and login/ register/ getUser functions.
 /Product.js: This is the individual Product Page - users can view details of each product and take actions here.
-/Profile.js: This is the Profile Page - users can view and update their information here.
-/Shop.js: This is the Shop Page / All Products Page - users can view, search for and filter products here.
+/Profile.js: This is the Profile Page - users can view their account details and update their information here.
+/Shop.js: This is the Shop Page / All Products Page - users can view, search for, and filter products here.
 /T&C.js: This is the Terms and Conditions Page.
 
 

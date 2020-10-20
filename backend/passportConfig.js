@@ -1,3 +1,6 @@
+// This is where authentication strategies for passport js are confugured. 
+// Supports local and Google authentication.
+
 const User = require("./user");
 const bcrypt = require("bcryptjs");
 const localStrategy = require("passport-local").Strategy;

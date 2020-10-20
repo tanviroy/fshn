@@ -1,4 +1,4 @@
-// This is the Shop Page / All Products Page - users can view, search for and filter products here.
+// This is the Shop Page / All Products Page - users can view, search for, and filter products here.
 
 import React, { Component } from "react";
 import "../App.css";

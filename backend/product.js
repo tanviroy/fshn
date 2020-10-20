@@ -1,4 +1,4 @@
-// This is a Mongoose schema (model) for a product
+// This is a Mongoose schema (model) for a product.
 
 const mongoose = require("mongoose");
 const product = new mongoose.Schema({

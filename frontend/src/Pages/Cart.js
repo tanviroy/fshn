@@ -1,4 +1,4 @@
-// This is the Cart Page - will show products (if any) that are in the cart
+// This is the Cart Page - will show products (if any) that are in the cart and wishlist.
 
 // <Container id="content">
 // <CartComp products={this.state.user.cart} />

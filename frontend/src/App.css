@@ -4,6 +4,14 @@
    Default CSS stylings
 *************************/
 
+/***********************
+Color palette of FSHN:
+Black: #000000
+White: #ffffff
+Yellow: #edca0d
+Yellow': #faf160
+***********************/
+
 @font-face {
   font-family: "fonty";
   src: URL("font.ttf") format("truetype");
@@ -234,10 +242,10 @@ label {
   filter: grayscale(0%);
 }
 .wrap-effect-1 .item:first-of-type {
-  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/1_aftwak.jpg');
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/5_z5df6a.jpg');
 }
 .wrap-effect-1 .item:nth-of-type(2) {
-  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/2_oumam3.jpg');
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429776/15_rczfii.jpg');
 }
 .wrap-effect-1 .item:nth-of-type(3) {
   background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429756/6_whg2sv.jpg');
@@ -246,11 +254,11 @@ label {
   background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/8_tsvgx9.jpg');
 }
 .wrap-effect-1 .item:last-of-type {
-  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429757/9_ljwm0w.jpg');
+  background-image: url('https://res.cloudinary.com/dl6m7txan/image/upload/v1602429780/43_ejjayj.jpg');
 }
 
 /*************************
-     2. Products Page
+      2. Shop Page
 *************************/
 
 .search-bar {
@@ -516,11 +524,7 @@ textarea {
 }
 
 /*************************
-      6. Signup Page
-*************************/
-
-/*************************
-      7. Profile Page
+      6. Profile Page
 *************************/
 
 .profile-list-container {

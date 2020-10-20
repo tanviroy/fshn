@@ -1,4 +1,4 @@
-// This is the Profile Page - users can view and update their information here.
+// This is the Profile Page - users can view their account details and update their information here.
 
 import React, { Component } from "react";
 import "../App.css";

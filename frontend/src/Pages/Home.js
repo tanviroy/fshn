@@ -1,4 +1,4 @@
-// This is the Home Page - main page. Has a carousel landing and featured products.
+// This is the Home Page - main page. Has a carousel landing, catchy banners, and featured products.
 // All necessary components only go here
 
 import React, { Component } from "react";
