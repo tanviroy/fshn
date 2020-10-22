@@ -18,7 +18,7 @@ const nodemailer = require('nodemailer');
 
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const User = require("./user");
 const Product = require("./product");
@@ -27,7 +27,7 @@ const user = require("./user");
 //========================================= MONGODB CONNECT
 
 mongoose.connect(
-  "mongodb+srv://soham:thisisthepassword@test-cluster.qybal.mongodb.net/test-cluster?retryWrites=true&w=majority",
+  process.env.MONGODB_URI || "mongodb+srv://soham:thisisthepassword@test-cluster.qybal.mongodb.net/test-cluster?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -658,6 +658,10 @@ app.get("/", (req, res) => {
 });
 
 //========================================= SERVER STARTING
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('../frontend/build'));
+}
 
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);
