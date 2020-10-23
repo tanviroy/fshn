@@ -29,7 +29,7 @@ module.exports = function (passport) {
   passport.use(new GoogleStrategy({
     clientID: "751001492083-rqrsijcv9pveemuj4rihnt4obcvhg8ju.apps.googleusercontent.com",
     clientSecret: "5jCOpS7nLjlhcR0m6zkt5K89",
-    callbackURL: "http://localhost:5000/google/callback"
+    callbackURL: "https://ap-project1.herokuapp.com/google/callback"
     //callbackURL: "http://localhost:3000/profile"
   },
   function(accessToken, refreshToken, profile, cb) {

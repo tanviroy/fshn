@@ -17,7 +17,7 @@ class Product extends Component {
     componentDidMount() {
       let url = window.location.pathname
       let prod_id = url.split("/")[2]
-      fetch("http://localhost:5000/getproductbyid/" + prod_id)
+      fetch("https://ap-project1.herokuapp.com/getproductbyid/" + prod_id)
         .then((res) => res.json())
         .then((data) => {
           this.setState({ products: data });
@@ -43,14 +43,14 @@ class Product extends Component {
           productId: productId,
         },
         withCredentials: true,
-        url: "http://localhost:5000/addreview",
+        url: "https://ap-project1.herokuapp.com/addreview",
       }).then(function (res) {
         console.log(res);
         window.location.reload(false);
         alert(res.data);
       });
 
-      await fetch("http://localhost:5000/getproductbyid/" + productId)
+      await fetch("https://ap-project1.herokuapp.com/getproductbyid/" + productId)
         .then((res) => res.json())
         .then((data) => {
           this.setState({ products: data });
@@ -68,7 +68,7 @@ class Product extends Component {
             productId: cartProduct,
           },
           withCredentials: true,
-          url: "http://localhost:5000/addtocart",
+          url: "https://ap-project1.herokuapp.com/addtocart",
         }).then(function (res) {
           console.log(res);
           alert(res.data);
@@ -82,7 +82,7 @@ class Product extends Component {
             productId: cartProduct,
           },
           withCredentials: true,
-          url: "http://localhost:5000/addtowishlist",
+          url: "https://ap-project1.herokuapp.com/addtowishlist",
         }).then(function (res) {
           console.log(res);
           alert(res.data);

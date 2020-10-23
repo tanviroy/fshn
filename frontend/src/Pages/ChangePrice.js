@@ -15,7 +15,7 @@ export default function AddProduct() {
 
       },
       withCredentials: true,
-      url: "http://localhost:5000/changeprice",
+      url: "https://ap-project1.herokuapp.com/changeprice",
     }).then((res) => console.log(res));
   };
 

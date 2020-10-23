@@ -26,7 +26,7 @@ class Profile extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/user",
+      url: "https://ap-project1.herokuapp.com/user",
     }).then((res) => {
       if (res.data === "Please login first"){
         alert(res.data)
@@ -41,7 +41,7 @@ class Profile extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/getcartitems",
+      url: "https://ap-project1.herokuapp.com/getcartitems",
     }).then((res) => {
       if (res.data !== "Please log in to proceed!"){
         this.setState({ cart: res.data});
@@ -51,7 +51,7 @@ class Profile extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/getwishlistitems",
+      url: "https://ap-project1.herokuapp.com/getwishlistitems",
     }).then((res) => {
       if (res.data !== "Please log in to proceed!"){
       this.setState({ wishlist: res.data});
@@ -61,7 +61,7 @@ class Profile extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/getorderitems",
+      url: "https://ap-project1.herokuapp.com/getorderitems",
     }).then((res) => {
       if (res.data !== "Please log in to proceed!"){
       this.setState({ orders: res.data});
@@ -73,7 +73,7 @@ class Profile extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/logout",
+      url: "https://ap-project1.herokuapp.com/logout",
     }).then((res) => {
       alert("You are logged out!");
       //console.log(res.data);
@@ -87,7 +87,7 @@ class Profile extends Component{
         mobile: this.state.newmobile,
       },
       withCredentials: true,
-      url: "http://localhost:5000/update/number",
+      url: "https://ap-project1.herokuapp.com/update/number",
     }).then((res) => console.log(res));
   };
 
@@ -98,7 +98,7 @@ class Profile extends Component{
         address: this.state.newaddress,
       },
       withCredentials: true,
-      url: "http://localhost:5000/update/address",
+      url: "https://ap-project1.herokuapp.com/update/address",
     }).then((res) => console.log(res));
   };
 

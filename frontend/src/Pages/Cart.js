@@ -22,7 +22,7 @@ class Cart extends Component {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/getcartitems",
+      url: "https://ap-project1.herokuapp.com/getcartitems",
     }).then((res) => {
 
       if (res.data === "Please log in to proceed!"){
@@ -39,7 +39,7 @@ class Cart extends Component {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/getwishlistitems",
+      url: "https://ap-project1.herokuapp.com/getwishlistitems",
     }).then((res) => {
 
       if (res.data === "Please log in to proceed!"){
@@ -61,7 +61,7 @@ class Cart extends Component {
       data:{
         productId: productId,
       },
-      url: "http://localhost:5000/movetowishlist",
+      url: "https://ap-project1.herokuapp.com/movetowishlist",
     }).then((res) => {
       console.log(res);
       window.location.reload(false);
@@ -77,7 +77,7 @@ class Cart extends Component {
       data:{
         productId: productId,
       },
-      url: "http://localhost:5000/removefromcart",
+      url: "https://ap-project1.herokuapp.com/removefromcart",
     }).then((res) => {
       console.log(res);
       window.location.reload(false);
@@ -93,7 +93,7 @@ class Cart extends Component {
       data:{
         productId: productId,
       },
-      url: "http://localhost:5000/removefromwishlist",
+      url: "https://ap-project1.herokuapp.com/removefromwishlist",
     }).then((res) => {
       console.log(res);
       window.location.reload(false);
@@ -109,7 +109,7 @@ class Cart extends Component {
       data:{
         productId: productId,
       },
-      url: "http://localhost:5000/movetocart",
+      url: "https://ap-project1.herokuapp.com/movetocart",
     }).then((res) => {
       console.log(res);
       window.location.reload(false);
@@ -125,7 +125,7 @@ class Cart extends Component {
       data:{
         productId: productId,
       },
-      url: "http://localhost:5000/buyproduct",
+      url: "https://ap-project1.herokuapp.com/buyproduct",
     }).then((res) => {
       console.log(res.data);
       window.location.reload(false);
@@ -138,7 +138,7 @@ class Cart extends Component {
     Axios({
       method: "POST",
       withCredentials: true,
-      url: "http://localhost:5000/buyallproducts",
+      url: "https://ap-project1.herokuapp.com/buyallproducts",
     }).then((res) => {
       console.log(res.data);
       window.location.reload(false);

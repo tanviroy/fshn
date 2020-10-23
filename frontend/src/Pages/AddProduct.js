@@ -27,7 +27,7 @@ export default function AddProduct() {
 
       },
       withCredentials: true,
-      url: "http://localhost:5000/addproduct",
+      url: "https://ap-project1.herokuapp.com/addproduct",
     }).then((res) => console.log(res));
   };
 

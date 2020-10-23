@@ -23,7 +23,7 @@ export default function Login() {
         email: registerEmail,
       },
       withCredentials: true,
-      url: "http://localhost:5000/register",
+      url: "https://ap-project1.herokuapp.com/register",
     }).then(function (res) {
       console.log(res);
       alert(res.data);
@@ -39,7 +39,7 @@ export default function Login() {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:5000/login",
+      url: "https://ap-project1.herokuapp.com/login",
     }).then(function (res) {
       console.log(res);
       alert(res.data);
@@ -48,7 +48,7 @@ export default function Login() {
   };
 
   const googleAuth = () => {
-    window.open("http://localhost:5000/google");
+    window.open("https://ap-project1.herokuapp.com/google");
   };
 
   

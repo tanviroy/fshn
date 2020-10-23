@@ -22,7 +22,7 @@ class Shop extends Component {
       method: "GET",
       withCredentials: true,
   
-      url: "http://localhost:5000/productsearch/"+this.state.searchterm,
+      url: "https://ap-project1.herokuapp.com/productsearch/"+this.state.searchterm,
     }).then((res) => {
       this.setState({ products: res.data });
       console.log(res.data);
@@ -37,7 +37,7 @@ class Shop extends Component {
       method: "GET",
       withCredentials: true,
   
-      url: "http://localhost:5000/productsearchbygender/"+this.state.gender,
+      url: "https://ap-project1.herokuapp.com/productsearchbygender/"+this.state.gender,
     }).then((res) => {
       this.setState({ products: res.data });
       console.log(res.data);
@@ -51,7 +51,7 @@ class Shop extends Component {
       method: "GET",
       withCredentials: true,
   
-      url: "http://localhost:5000/productsearchbycolor/"+this.state.color,
+      url: "https://ap-project1.herokuapp.com/productsearchbycolor/"+this.state.color,
     }).then((res) => {
       this.setState({ products: res.data });
       console.log(res.data);
@@ -59,7 +59,7 @@ class Shop extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/getproducts")
+    fetch("https://ap-project1.herokuapp.com/getproducts")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ products: data });
