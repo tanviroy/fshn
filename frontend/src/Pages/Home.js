@@ -15,7 +15,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    fetch("https://ap-project1.herokuapp.com/getfeaturedproducts")
+    fetch("http://localhost:5000/getfeaturedproducts")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ products: data });
