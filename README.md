@@ -1,147 +1,68 @@
-![logo](https://user-images.githubusercontent.com/61850850/96576215-79825380-12ef-11eb-9843-6bb4146b766f.png)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# FSHN - an E-Commerce Platform for apparel
-> Project 1 for [CS-1202] Advanced Programming. This is a MERN stack e-commerce (clothing store) website. This project was built by [Ruthu Rooparaghunath](https://github.com/hulikalruthu), [Soham De](https://github.com/actuallysoham), and [Tanvi Roy](https://github.com/tanviroy). 
+## Available Scripts
 
-## Quick Start
-Open up a CLI, and execute the following commands:
-```
-$ git clone https://github.com/tanviroy/fshn.git
-$ cd fshn
+In the project directory, you can run:
 
-$ npm install
-$ npm start
+### `npm start`
 
-$ cd frontend
-$ npm install
-$ npm start
-```
-This should get your server to run at localhost:5000 and frontend to run at localhost:3000
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Project Details
-This project was built using the MERN stack of technologies.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### Major Technologies Used
-![techstack](https://user-images.githubusercontent.com/61850850/96565848-8482b700-12e2-11eb-8e6c-3e0f04c98289.png)
+### `npm test`
 
-<br/>
-<table>
-<thead>
-<tr>
-<th>Area</th>
-<th>Technology</th>
-</tr>
-</thead>
-<tbody>
-	<tr>
-		<td>Front-End</td>
-		<td>React, React-Bootstrap, CSS3</td>
-	</tr>
-	<tr>
-		<td>Authentication</td>
-		<td>Passport.js, bcrypt.js</td>
-	</tr>
-	<tr>
-		<td>Back-End</td>
-		<td>Node.js, Express, Mongoose</td>
-	</tr>
-	<tr>
-		<td>Cookie/Database Management</td>
-		<td>CookieParser, MongoDB, Mongoose</td>
-	</tr>
-</tbody>
-</table>
-<br/>
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Database
-<table>
-<thead>
-<tr>
-<th>Defined Schemas</th>
-<th>Schema fields</th>
-</tr>
-</thead>
-<tbody>
-	<tr>
-		<td>Users</td>
-		<td>username: String,<br/>
-  		googleId: String,<br/>
-  		email: String,<br/>
-  		password: String,<br/>
-  		address: { type: String, default: "home" },<br/>
-  		mobile: Number,<br/>
-  		orders: [{ type: String }],<br/>
-  		cart: [{ type: String }],<br/>
-  		wishlist: [{ type: String }],</td><br/>
-	</tr>
-	<tr>
-		<td>Products</td>
-		<td>name: String,<br/>
-  		description: String,<br/>
- 		category: [{ type: String }],<br/>
- 		color: [{type: String}],<br/>
- 		gender: [{type: String}],<br/>
-  		imageurl: String,<br/>
-  		price: Number,<br/>
- 		rating: [{ type: Number }],<br/>
-  		reviews: [{ body: String, user: String, verified: String }],<br/>
-  		buyers: [{ type: String }],<br/>
-  		wishers: [{ type: String }],</td><br/>
-	</tr>
-	
-</tbody>
-</table>
-<br/>
+### `npm run build`
 
-### Codebase Structure 
-```
-.
-├── backend/
-│   ├── data.js
-│   ├── passportConfig.js
-│   ├── product.js
-│   ├── server.js
-│   └── user.js
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── Pages/
-│       ├── App.css
-│       ├── App.js
-│       ├── font.ttf
-│       ├── index.css
-│       └── index.js
-├── .babelrc
-├── .gitignore
-├── helper.txt
-├── package-lock.json
-├── package.json
-└── README.md
-```
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Code Documentation
-For a more detailed documentation of our code and the complete list of project dependencies see [Helper.txt](helper.txt).
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-### Design
-Logo design and concept banners can be viewed [here](https://www.canva.com/design/DAEJ2_HNt70/EwHMzzYoWlaoPhGUtJx-Dw/view?utm_content=DAEJ2_HNt70&utm_campaign=designshare&utm_medium=link&utm_source=publishpresent)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Demo
-<Insert Demo GIF files here>
+### `npm run eject`
 
-### Home Page
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Shop - Search, Filter, Products
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Product Page - Details and Reviews 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Login Page - Register, Login with FSHN account or Google OAuth
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Cart Page - Add/Remove to Cart
+## Learn More
 
-### User Profile - Update Info, View User Insights
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Citations
-Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, and Passportjs where needed. 
-* [Vertical Column Image Expansion CSS snippet](https://codepen.io/januaryofmine/pen/VRgEvV)
-* All our products have been taken from [H&M](https://www2.hm.com/en_us/index.html) and we were greatly inspired by their features and minimal design.
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
