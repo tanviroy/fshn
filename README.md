@@ -131,21 +131,27 @@ Logo design and concept banners can be viewed [here](https://www.canva.com/desig
 
 ### Home Page
 ![Home](https://user-images.githubusercontent.com/61850850/97976107-2ed50100-1df0-11eb-8572-28fa2b32f1a6.gif)
+<br/><br/>
 
 ### Shop - Search, Filter, Products
 ![Shop](https://user-images.githubusercontent.com/61850850/97976194-4dd39300-1df0-11eb-890b-96bd74157a9b.gif)
+<br/><br/>
 
 ### Product Page - Details and Reviews 
 ![Product](https://user-images.githubusercontent.com/61850850/97976197-4f04c000-1df0-11eb-997f-6541cfc468b0.gif)
+<br/><br/>
 
 ### Login Page - Register, Login with FSHN account or Google OAuth
 ![Login](https://user-images.githubusercontent.com/61850850/97976199-5035ed00-1df0-11eb-8e1c-4bf0d79fa5b6.gif)
+<br/><br/>
 
 ### Cart Page - Add/Remove to Cart
 ![Cart](https://user-images.githubusercontent.com/61850850/97976204-51ffb080-1df0-11eb-82e3-5caa974de608.gif)
+<br/><br/>
 
 ### User Profile - Update Info, View User Insights
 ![User](https://user-images.githubusercontent.com/61850850/97976209-53c97400-1df0-11eb-90bc-cc8bed9850ee.gif)
+<br/><br/>
 
 ## Citations
 Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, and Passportjs where needed. 
