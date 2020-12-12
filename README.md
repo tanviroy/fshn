@@ -1,6 +1,6 @@
 ![logo](https://user-images.githubusercontent.com/61850850/96576215-79825380-12ef-11eb-9843-6bb4146b766f.png)
 
-# FSHN - an E-Commerce Platform for apparel
+# FSHN - an E-Commerce Platform for apparel 👗💻
 > Project 1 for [CS-1202] Advanced Programming. This is a MERN stack e-commerce (clothing store) website. This project was built by [Ruthu Rooparaghunath](https://github.com/hulikalruthu), [Soham De](https://github.com/actuallysoham), and [Tanvi Roy](https://github.com/tanviroy). 
 
 ## Quick Start
